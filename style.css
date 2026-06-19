@@ -685,6 +685,28 @@ body.dark-theme .calc-header h3 {
   text-decoration: underline;
 }
 
+.verified-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background-color: #ecfdf5; /* Emerald 50 / Light green */
+  color: #059669;            /* Emerald 600 */
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-left: 8px;
+  border: 1px solid rgba(5, 150, 105, 0.15);
+  vertical-align: middle;
+  transition: var(--transition-smooth);
+}
+
+body.dark-theme .verified-tag {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border-color: rgba(52, 211, 153, 0.15);
+}
+
 .clinic-name {
   font-size: 18px;
   font-weight: 700;
