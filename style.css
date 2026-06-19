@@ -669,6 +669,22 @@ body.dark-theme .calc-header h3 {
   gap: 4px;
 }
 
+.clinic-name-link, .clinic-addr-link {
+  text-decoration: none;
+  width: fit-content;
+  display: block;
+}
+
+.clinic-name-link:hover .clinic-name {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+.clinic-addr-link:hover .clinic-addr {
+  color: var(--color-text-main);
+  text-decoration: underline;
+}
+
 .clinic-name {
   font-size: 18px;
   font-weight: 700;
