@@ -1,53 +1,4 @@
-// ==========================================================================
-// Mock Public Data - HIRA Non-Reimbursed Medical Prices (비급여 진료비)
-// ==========================================================================
-const CLINIC_DATA = [
-  // 가다실 9가 (자궁경부암 백신)
-  { id: 1, name: "강남바른피부과의원", city: "서울특별시", district: "강남구", addr: "서울 강남구 테헤란로 124", item: "gardasil", treatment: "자궁경부암 예방접종 (가다실 9가)", price: 160000 },
-  { id: 2, name: "서초미래산부인과의원", city: "서울특별시", district: "서초구", addr: "서울 서초구 강남대로 345", item: "gardasil", treatment: "자궁경부암 예방접종 (가다실 9가)", price: 230000 },
-  { id: 3, name: "송파연세가정의학과의원", city: "서울특별시", district: "송파구", addr: "서울 송파구 올림픽로 88", item: "gardasil", treatment: "자궁경부암 예방접종 (가다실 9가)", price: 185000 },
-  { id: 4, name: "청담프레스티지의원", city: "서울특별시", district: "강남구", addr: "서울 강남구 압구정로 412", item: "gardasil", treatment: "자궁경부암 예방접종 (가다실 9가)", price: 310000 },
-  { id: 5, name: "마포공덕내과의원", city: "서울특별시", district: "마포구", addr: "서울 마포구 마포대로 109", item: "gardasil", treatment: "자궁경부암 예방접종 (가다실 9가)", price: 210000 },
-  { id: 6, name: "부산메디컬가정의학과의원", city: "부산광역시", district: "해운대구", addr: "부산 해운대구 해운대해변로 257", item: "gardasil", treatment: "자궁경부암 예방접종 (가다실 9가)", price: 170000 },
-  { id: 7, name: "부산센텀여성의원", city: "부산광역시", district: "동래구", addr: "부산 동래구 중앙대로 1300", item: "gardasil", treatment: "자궁경부암 예방접종 (가다실 9가)", price: 290000 },
-  { id: 8, name: "대구중앙메디컬의원", city: "대구광역시", district: "중구", addr: "대구 중구 달구벌대로 2100", item: "gardasil", treatment: "자궁경부암 예방접종 (가다실 9가)", price: 195000 },
-  
-  // 대상포진 예방접종 (싱그릭스)
-  { id: 21, name: "연세중앙내과의원", city: "서울특별시", district: "서초구", addr: "서울 서초구 반포대로 88", item: "shingles", treatment: "대상포진 예방접종 (싱그릭스 1회)", price: 180000 },
-  { id: 22, name: "삼성웰니스의원", city: "서울특별시", district: "강남구", addr: "서울 강남구 역삼로 204", item: "shingles", treatment: "대상포진 예방접종 (싱그릭스 1회)", price: 260000 },
-  { id: 23, name: "명가정의학과의원", city: "서울특별시", district: "종로구", addr: "서울 종로구 대학로 120", item: "shingles", treatment: "대상포진 예방접종 (싱그릭스 1회)", price: 210000 },
-  { id: 24, name: "청담드림내과의원", city: "서울특별시", district: "강남구", addr: "서울 강남구 학동로 321", item: "shingles", treatment: "대상포진 예방접종 (싱그릭스 1회)", price: 295000 },
-  { id: 25, name: "일산자유내과의원", city: "경기도", district: "고양시 일산동구", addr: "경기 고양시 일산동구 정발산로 24", item: "shingles", treatment: "대상포진 예방접종 (싱그릭스 1회)", price: 190000 },
-  { id: 26, name: "수원인계가정의학과의원", city: "경기도", district: "수원시 팔달구", addr: "경기 수원시 팔달구 권광로 181", item: "shingles", treatment: "대상포진 예방접종 (싱그릭스 1회)", price: 240000 },
-  { id: 27, name: "부산제일내과의원", city: "부산광역시", district: "연제구", addr: "부산 연제구 중앙대로 1050", item: "shingles", treatment: "대상포진 예방접종 (싱그릭스 1회)", price: 199000 },
-
-  // 도수치료
-  { id: 41, name: "강남나눔정형외과의원", city: "서울특별시", district: "강남구", addr: "서울 강남구 도곡로 112", item: "manual", treatment: "도수치료 (1회, 60분)", price: 60000 },
-  { id: 42, name: "바로정형외과의원", city: "서울특별시", district: "강남구", addr: "서울 강남구 선릉로 515", item: "manual", treatment: "도수치료 (1회, 60분)", price: 180000 },
-  { id: 43, name: "마포탑정형외과의원", city: "서울특별시", district: "마포구", addr: "서울 마포구 독막로 311", item: "manual", treatment: "도수치료 (1회, 60분)", price: 130000 },
-  { id: 44, name: "광화문도수치료의원", city: "서울특별시", district: "종로구", addr: "서울 종로구 새문안로 92", item: "manual", treatment: "도수치료 (1회, 60분)", price: 240000 },
-  { id: 45, name: "인천연수통증정형외과의원", city: "인천광역시", district: "연수구", addr: "인천 연수구 벚꽃로 130", item: "manual", treatment: "도수치료 (1회, 60분)", price: 90000 },
-  { id: 46, name: "수원연세통증의학과의원", city: "경기도", district: "수원시 영통구", addr: "경기 수원시 영통구 봉영로 1612", item: "manual", treatment: "도수치료 (1회, 60분)", price: 150000 },
-  { id: 47, name: "대구반월당정형외과의원", city: "대구광역시", district: "중구", addr: "대구 중구 달구벌대로 2100", item: "manual", treatment: "도수치료 (1회, 60분)", price: 80000 },
-
-  // 마늘주사/수액
-  { id: 61, name: "강남연세의원", city: "서울특별시", district: "강남구", addr: "서울 강남구 테헤란로 311", item: "injection", treatment: "영양성 수액 (마늘/신데렐라 주사)", price: 20000 },
-  { id: 62, name: "역삼가정의학과의원", city: "서울특별시", district: "강남구", addr: "서울 강남구 테헤란로 156", item: "injection", treatment: "영양성 수액 (마늘/신데렐라 주사)", price: 70000 },
-  { id: 63, name: "여의도힐링의원", city: "서울특별시", district: "영등포구", addr: "서울 영등포구 여의대방로 383", item: "injection", treatment: "영양성 수액 (마늘/신데렐라 주사)", price: 50000 },
-  { id: 64, name: "압구정프리미어의원", city: "서울특별시", district: "강남구", addr: "서울 강남구 압구정로 321", item: "injection", treatment: "영양성 수액 (마늘/신데렐라 주사)", price: 110000 },
-  { id: 65, name: "성남모란의원", city: "경기도", district: "성남시 수정구", addr: "경기 성남시 수정구 성남대로 1180", item: "injection", treatment: "영양성 수액 (마늘/신데렐라 주사)", price: 30000 },
-  { id: 66, name: "부산서면메디컬의원", city: "부산광역시", district: "부산진구", addr: "부산 부산진구 가야대로 772", item: "injection", treatment: "영양성 수액 (마늘/신데렐라 주사)", price: 40000 },
-];
-
-// 행정구역 데이터
-const REGION_DATA = {
-  "전체": [],
-  "서울특별시": ["전체", "강남구", "서초구", "송파구", "마포구", "종로구", "영등포구"],
-  "부산광역시": ["전체", "해운대구", "동래구", "연제구", "부산진구"],
-  "대구광역시": ["전체", "중구"],
-  "인천광역시": ["전체", "연수구"],
-  "경기도": ["전체", "고양시 일산동구", "수원시 팔달구", "수원시 영통구", "성남시 수정구"]
-};
+let clinicData = [];
 
 // ==========================================================================
 // Application State
@@ -58,9 +9,25 @@ let currentDistrict = "전체";
 let searchQuery = "";
 let currentSort = "priceAsc"; // Price Low to High
 
+// Default recommended sessions for each item
+const DEFAULT_SESSIONS = {
+  "gardasil": 3,
+  "shingles": 2,
+  "manual": 10,
+  "injection": 5
+};
+
+const ITEM_NAMES = {
+  "gardasil": "가다실 9가",
+  "shingles": "대상포진 (싱그릭스)",
+  "manual": "도수치료",
+  "injection": "마늘주사/수액"
+};
+
 // ==========================================================================
 // Elements
 // ==========================================================================
+const themeToggle = document.getElementById("themeToggle");
 const tabButtons = document.querySelectorAll(".tab-btn");
 const citySelect = document.getElementById("citySelect");
 const districtSelect = document.getElementById("districtSelect");
@@ -73,14 +40,43 @@ const valLowest = document.getElementById("valLowest");
 const valAverage = document.getElementById("valAverage");
 const valHighest = document.getElementById("valHighest");
 
+// Calculator Elements
+const calcItemName = document.getElementById("calcItemName");
+const calcSessions = document.getElementById("calcSessions");
+const btnSessionMinus = document.getElementById("btnSessionMinus");
+const btnSessionPlus = document.getElementById("btnSessionPlus");
+const calcPricePerSession = document.getElementById("calcPricePerSession");
+const calcTotalCost = document.getElementById("calcTotalCost");
+
 // ==========================================================================
 // Init & Event Listeners
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
-  initRegions();
-  render();
+  initTheme();
   injectFaqSchema();
   
+  // Fetch dynamic data.json
+  fetch('data.json')
+    .then(res => res.json())
+    .then(data => {
+      clinicData = data;
+      initRegions(); // Dynamically generate region dropdown options
+      resetCalculator();
+      render();
+    })
+    .catch(err => {
+      console.error("데이터 로딩 실패:", err);
+      listContainer.innerHTML = `
+        <div class="no-results">
+          <i class="fas fa-exclamation-triangle"></i>
+          <p>병원 데이터 로딩에 실패했습니다. 새로고침해 주세요.</p>
+        </div>
+      `;
+    });
+  
+  // Theme Toggle
+  themeToggle.addEventListener("click", toggleTheme);
+
   // Category tabs
   tabButtons.forEach(btn => {
     btn.addEventListener("click", (e) => {
@@ -88,6 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const target = e.currentTarget;
       target.classList.add("active");
       currentItem = target.dataset.item;
+      
+      resetCalculator();
       render();
     });
   });
@@ -117,19 +115,78 @@ document.addEventListener("DOMContentLoaded", () => {
     currentSort = e.target.value;
     render();
   });
+
+  // Calculator sessions change
+  calcSessions.addEventListener("input", () => {
+    let val = parseInt(calcSessions.value);
+    if (isNaN(val) || val < 1) val = 1;
+    calcSessions.value = val;
+    calculateTotalExpenses();
+  });
+
+  btnSessionMinus.addEventListener("click", () => {
+    let val = parseInt(calcSessions.value) || 1;
+    if (val > 1) {
+      calcSessions.value = val - 1;
+      calculateTotalExpenses();
+    }
+  });
+
+  btnSessionPlus.addEventListener("click", () => {
+    let val = parseInt(calcSessions.value) || 1;
+    if (val < 99) {
+      calcSessions.value = val + 1;
+      calculateTotalExpenses();
+    }
+  });
 });
 
 // ==========================================================================
-// Helper Functions
+// Theme Logic (Dark/Light)
+// ==========================================================================
+function initTheme() {
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  
+  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+    document.body.classList.add("dark-theme");
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  } else {
+    document.body.classList.remove("dark-theme");
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+  }
+}
+
+function toggleTheme() {
+  const isDark = document.body.classList.toggle("dark-theme");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+  themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+}
+
+// ==========================================================================
+// Region Select Initialization (Dynamic from data.json)
 // ==========================================================================
 function initRegions() {
+  // Extract unique cities
+  const cities = ["전체", ...new Set(clinicData.map(item => item.city).filter(Boolean))];
+  
+  // Sort cities (with Seoul first, then alphabetical)
+  cities.sort((a, b) => {
+    if (a === "전체") return -1;
+    if (b === "전체") return 1;
+    if (a === "서울특별시") return -1;
+    if (b === "서울특별시") return 1;
+    return a.localeCompare(b, "ko");
+  });
+
   citySelect.innerHTML = "";
-  Object.keys(REGION_DATA).forEach(city => {
+  cities.forEach(city => {
     const opt = document.createElement("option");
     opt.value = city;
-    opt.textContent = city;
+    opt.textContent = city === "전체" ? "시/도 전체" : city;
     citySelect.appendChild(opt);
   });
+  
   updateDistrictOptions("전체");
 }
 
@@ -145,7 +202,21 @@ function updateDistrictOptions(city) {
   }
   
   districtSelect.disabled = false;
-  const districts = REGION_DATA[city] || [];
+  
+  // Extract unique districts for the selected city
+  const districts = ["전체", ...new Set(
+    clinicData
+      .filter(item => item.city === city)
+      .map(item => item.district)
+      .filter(Boolean)
+  )];
+  
+  districts.sort((a, b) => {
+    if (a === "전체") return -1;
+    if (b === "전체") return 1;
+    return a.localeCompare(b, "ko");
+  });
+
   districts.forEach(dist => {
     const opt = document.createElement("option");
     opt.value = dist;
@@ -159,11 +230,33 @@ function formatNumber(num) {
 }
 
 // ==========================================================================
+// Calculator Helpers
+// ==========================================================================
+function resetCalculator() {
+  const defaultSessions = DEFAULT_SESSIONS[currentItem] || 1;
+  calcSessions.value = defaultSessions;
+  calcItemName.textContent = `${ITEM_NAMES[currentItem]} (${defaultSessions}회 기준)`;
+}
+
+function calculateTotalExpenses() {
+  // Get currently displayed average price
+  const avgText = valAverage.textContent.replace(/[^0-9]/g, "");
+  const avgPrice = parseInt(avgText) || 0;
+  
+  const sessions = parseInt(calcSessions.value) || 1;
+  const total = avgPrice * sessions;
+  
+  calcPricePerSession.textContent = formatNumber(avgPrice);
+  calcTotalCost.textContent = formatNumber(total);
+  calcItemName.textContent = `${ITEM_NAMES[currentItem]} (${sessions}회 기준)`;
+}
+
+// ==========================================================================
 // Core Render Logic
 // ==========================================================================
 function render() {
   // 1. Filtering
-  let filtered = CLINIC_DATA.filter(item => item.item === currentItem);
+  let filtered = clinicData.filter(item => item.item === currentItem);
   
   if (currentCity !== "전체") {
     filtered = filtered.filter(item => item.city === currentCity);
@@ -196,6 +289,9 @@ function render() {
   resultsCount.textContent = `검색 결과: ${filtered.length}건`;
   listContainer.innerHTML = "";
   
+  // Calculate expenses based on updated filters
+  calculateTotalExpenses();
+
   if (filtered.length === 0) {
     listContainer.innerHTML = `
       <div class="no-results">
@@ -206,15 +302,17 @@ function render() {
     return;
   }
 
-  // Calculate local average to determine lowest/highest thresholds
+  // Calculate local bounds for progress bars
   const prices = filtered.map(x => x.price);
+  const minPrice = Math.min(...prices);
+  const maxPrice = Math.max(...prices);
   const avg = prices.reduce((sum, val) => sum + val, 0) / prices.length;
   
   filtered.forEach(clinic => {
     const card = document.createElement("div");
     card.className = "clinic-card";
     
-    // Status Badge Logic (For Clickbait)
+    // Status Badge Logic
     let badgeClass = "warn";
     let badgeText = "평균 수준";
     
@@ -227,6 +325,10 @@ function render() {
       badgeText = "최고가 주의";
     }
     
+    // Calculate percentage position for relative price bar (0% is minPrice, 100% is maxPrice)
+    const priceSpan = maxPrice - minPrice;
+    const pct = priceSpan > 0 ? ((clinic.price - minPrice) / priceSpan) * 100 : 50;
+    
     card.innerHTML = `
       <div class="clinic-info">
         <span class="clinic-name">${clinic.name}</span>
@@ -236,6 +338,12 @@ function render() {
       <div class="clinic-price-area">
         <span class="price-label">비급여 진료비</span>
         <span class="price-value">${formatNumber(clinic.price)}</span>
+        <div class="price-progress-wrapper">
+          <div class="price-progress-container">
+            <div class="price-progress-bar" style="width: 100%"></div>
+            <div class="price-progress-indicator" style="left: ${pct}%" title="최저 ${formatNumber(minPrice)} ~ 최고 ${formatNumber(maxPrice)} 중 현재 가격 위치"></div>
+          </div>
+        </div>
       </div>
       <div class="clinic-status-area">
         <span class="price-badge ${badgeClass}">
