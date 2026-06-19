@@ -330,11 +330,14 @@ function render() {
     const pct = priceSpan > 0 ? ((clinic.price - minPrice) / priceSpan) * 100 : 50;
     
     const mapQuery = `${clinic.name} ${clinic.city} ${clinic.district}`;
+    const verifiedBadge = clinic.naver_verified 
+      ? `<span class="verified-tag" title="네이버 지도 실제 등록 확인됨"><i class="fas fa-check-circle"></i> 지도 등록됨</span>`
+      : '';
 
     card.innerHTML = `
       <div class="clinic-info">
         <a href="https://map.naver.com/v5/search/${encodeURIComponent(mapQuery)}" target="_blank" class="clinic-name-link" title="네이버 지도로 검색">
-          <span class="clinic-name">${clinic.name} <i class="fas fa-external-link-alt" style="font-size: 11px; margin-left: 4px; opacity: 0.6;"></i></span>
+          <span class="clinic-name">${clinic.name}${verifiedBadge} <i class="fas fa-external-link-alt" style="font-size: 11px; margin-left: 4px; opacity: 0.6;"></i></span>
         </a>
         <a href="https://map.naver.com/v5/search/${encodeURIComponent(clinic.addr)}" target="_blank" class="clinic-addr-link" title="네이버 지도로 주소 검색">
           <span class="clinic-addr"><i class="fas fa-map-marker-alt"></i> ${clinic.addr}</span>
