@@ -7,7 +7,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 210000,
-    "id": 1
+    "id": 1,
+    "naver_verified": true
   },
   {
     "name": "새얀산부인과의원",
@@ -17,7 +18,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 220000,
-    "id": 2
+    "id": 2,
+    "naver_verified": true
   },
   {
     "name": "톡스앤필의원 강남점",
@@ -27,7 +29,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 200000,
-    "id": 3
+    "id": 3,
+    "naver_verified": true
   },
   {
     "name": "서울성모병원",
@@ -37,7 +40,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 250000,
-    "id": 4
+    "id": 4,
+    "naver_verified": true
   },
   {
     "name": "더클리닉의원",
@@ -47,7 +51,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 205000,
-    "id": 5
+    "id": 5,
+    "naver_verified": true
   },
   {
     "name": "연세세브란스의원",
@@ -57,7 +62,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 215000,
-    "id": 6
+    "id": 6,
+    "naver_verified": true
   },
   {
     "name": "삼성미즈산부인과의원",
@@ -67,7 +73,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 230000,
-    "id": 7
+    "id": 7,
+    "naver_verified": true
   },
   {
     "name": "강남차병원",
@@ -77,7 +84,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 245000,
-    "id": 8
+    "id": 8,
+    "naver_verified": true
   },
   {
     "name": "닥터스피부과의원 건대점",
@@ -87,7 +95,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 195000,
-    "id": 9
+    "id": 9,
+    "naver_verified": true
   },
   {
     "name": "고운맘산부인과의원 목동점",
@@ -97,7 +106,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 210000,
-    "id": 10
+    "id": 10,
+    "naver_verified": true
   },
   {
     "name": "밝은미래내과의원",
@@ -107,7 +117,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 200000,
-    "id": 11
+    "id": 11,
+    "naver_verified": true
   },
   {
     "name": "연세W산부인과의원 신촌점",
@@ -117,7 +128,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 225000,
-    "id": 12
+    "id": 12,
+    "naver_verified": true
   },
   {
     "name": "탑클래스피부과의원 홍대점",
@@ -127,7 +139,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 198000,
-    "id": 13
+    "id": 13,
+    "naver_verified": true
   },
   {
     "name": "굿모닝내과의원",
@@ -137,7 +150,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 205000,
-    "id": 14
+    "id": 14,
+    "naver_verified": true
   },
   {
     "name": "분당서울대학교병원",
@@ -147,7 +161,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 260000,
-    "id": 15
+    "id": 15,
+    "naver_verified": true
   },
   {
     "name": "우리들산부인과의원",
@@ -157,7 +172,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 210000,
-    "id": 16
+    "id": 16,
+    "naver_verified": true
   },
   {
     "name": "동탄서울내과의원",
@@ -167,7 +183,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 200000,
-    "id": 17
+    "id": 17,
+    "naver_verified": true
   },
   {
     "name": "용인서울여성병원",
@@ -177,7 +194,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 235000,
-    "id": 18
+    "id": 18,
+    "naver_verified": true
   },
   {
     "name": "나수미산부인과의원",
@@ -187,7 +205,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 215000,
-    "id": 19
+    "id": 19,
+    "naver_verified": true
   },
   {
     "name": "다정피부과의원",
@@ -197,7 +216,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 190000,
-    "id": 20
+    "id": 20,
+    "naver_verified": true
   },
   {
     "name": "정재헌내과의원",
@@ -207,7 +227,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 205000,
-    "id": 21
+    "id": 21,
+    "naver_verified": true
   },
   {
     "name": "산본제일병원",
@@ -217,7 +238,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 240000,
-    "id": 22
+    "id": 22,
+    "naver_verified": true
   },
   {
     "name": "새롬산부인과의원",
@@ -227,7 +249,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 210000,
-    "id": 23
+    "id": 23,
+    "naver_verified": true
   },
   {
     "name": "연세웰내과의원",
@@ -237,7 +260,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 200000,
-    "id": 24
+    "id": 24,
+    "naver_verified": true
   },
   {
     "name": "톡스앤필의원 수원점",
@@ -247,7 +271,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 195000,
-    "id": 25
+    "id": 25,
+    "naver_verified": true
   },
   {
     "name": "연세맘산부인과의원",
@@ -257,7 +282,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 220000,
-    "id": 26
+    "id": 26,
+    "naver_verified": true
   },
   {
     "name": "서울하이케어의원",
@@ -267,7 +293,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 205000,
-    "id": 27
+    "id": 27,
+    "naver_verified": true
   },
   {
     "name": "우리여성병원",
@@ -277,7 +304,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 230000,
-    "id": 28
+    "id": 28,
+    "naver_verified": true
   },
   {
     "name": "가천대 길병원",
@@ -287,7 +315,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 265000,
-    "id": 29
+    "id": 29,
+    "naver_verified": true
   },
   {
     "name": "연세하나산부인과의원",
@@ -297,7 +326,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 215000,
-    "id": 30
+    "id": 30,
+    "naver_verified": true
   },
   {
     "name": "고운맘내과의원",
@@ -307,7 +337,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 200000,
-    "id": 31
+    "id": 31,
+    "naver_verified": true
   },
   {
     "name": "미의원 청라점",
@@ -317,7 +348,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 198000,
-    "id": 32
+    "id": 32,
+    "naver_verified": true
   },
   {
     "name": "인천성모병원",
@@ -327,7 +359,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 255000,
-    "id": 33
+    "id": 33,
+    "naver_verified": true
   },
   {
     "name": "굿모닝산부인과의원",
@@ -337,7 +370,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 210000,
-    "id": 34
+    "id": 34,
+    "naver_verified": true
   },
   {
     "name": "부산서울내과의원",
@@ -347,7 +381,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 205000,
-    "id": 35
+    "id": 35,
+    "naver_verified": true
   },
   {
     "name": "센텀맑은샘내과의원",
@@ -357,7 +392,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 210000,
-    "id": 36
+    "id": 36,
+    "naver_verified": true
   },
   {
     "name": "연세미래산부인과의원",
@@ -367,7 +403,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 220000,
-    "id": 37
+    "id": 37,
+    "naver_verified": true
   },
   {
     "name": "광안튼튼내과의원",
@@ -377,7 +414,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 200000,
-    "id": 38
+    "id": 38,
+    "naver_verified": true
   },
   {
     "name": "하단맑은내과의원",
@@ -387,7 +425,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 215000,
-    "id": 39
+    "id": 39,
+    "naver_verified": true
   },
   {
     "name": "우리베스트내과의원",
@@ -397,7 +436,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 225000,
-    "id": 40
+    "id": 40,
+    "naver_verified": true
   },
   {
     "name": "범어연세내과의원",
@@ -407,7 +447,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 230000,
-    "id": 41
+    "id": 41,
+    "naver_verified": true
   },
   {
     "name": "동성로연합내과의원",
@@ -417,7 +458,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 210000,
-    "id": 42
+    "id": 42,
+    "naver_verified": true
   },
   {
     "name": "대구우리들병원",
@@ -427,7 +469,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 240000,
-    "id": 43
+    "id": 43,
+    "naver_verified": true
   },
   {
     "name": "미래여성병원",
@@ -437,7 +480,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 220000,
-    "id": 44
+    "id": 44,
+    "naver_verified": true
   },
   {
     "name": "더필산부인과의원",
@@ -447,7 +491,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 235000,
-    "id": 45
+    "id": 45,
+    "naver_verified": true
   },
   {
     "name": "울산제일병원",
@@ -457,7 +502,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 245000,
-    "id": 46
+    "id": 46,
+    "naver_verified": true
   },
   {
     "name": "창원파티마병원",
@@ -467,7 +513,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 250000,
-    "id": 47
+    "id": 47,
+    "naver_verified": true
   },
   {
     "name": "김해중앙병원",
@@ -477,7 +524,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 230000,
-    "id": 48
+    "id": 48,
+    "naver_verified": true
   },
   {
     "name": "진주제일병원",
@@ -487,7 +535,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 240000,
-    "id": 49
+    "id": 49,
+    "naver_verified": true
   },
   {
     "name": "양산부산대학교병원",
@@ -497,7 +546,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 260000,
-    "id": 50
+    "id": 50,
+    "naver_verified": true
   },
   {
     "name": "포항S여성병원",
@@ -507,7 +557,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 235000,
-    "id": 51
+    "id": 51,
+    "naver_verified": true
   },
   {
     "name": "구미차병원",
@@ -517,7 +568,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 240000,
-    "id": 52
+    "id": 52,
+    "naver_verified": true
   },
   {
     "name": "경주동산병원",
@@ -527,7 +579,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 220000,
-    "id": 53
+    "id": 53,
+    "naver_verified": true
   },
   {
     "name": "안동병원",
@@ -537,7 +590,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 230000,
-    "id": 54
+    "id": 54,
+    "naver_verified": true
   },
   {
     "name": "대전선병원",
@@ -547,7 +601,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 245000,
-    "id": 55
+    "id": 55,
+    "naver_verified": true
   },
   {
     "name": "유성웰니스병원",
@@ -557,7 +612,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 230000,
-    "id": 56
+    "id": 56,
+    "naver_verified": true
   },
   {
     "name": "탄방삼성내과의원",
@@ -567,7 +623,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 210000,
-    "id": 57
+    "id": 57,
+    "naver_verified": true
   },
   {
     "name": "천안우리병원",
@@ -577,7 +634,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 230000,
-    "id": 58
+    "id": 58,
+    "naver_verified": true
   },
   {
     "name": "아산충무병원",
@@ -587,7 +645,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 225000,
-    "id": 59
+    "id": 59,
+    "naver_verified": true
   },
   {
     "name": "청주한국병원",
@@ -597,7 +656,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 240000,
-    "id": 60
+    "id": 60,
+    "naver_verified": true
   },
   {
     "name": "세종충남대학교병원",
@@ -607,7 +667,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 255000,
-    "id": 61
+    "id": 61,
+    "naver_verified": true
   },
   {
     "name": "광주기독병원",
@@ -617,7 +678,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 230000,
-    "id": 62
+    "id": 62,
+    "naver_verified": true
   },
   {
     "name": "미즈피아병원",
@@ -627,7 +689,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 220000,
-    "id": 63
+    "id": 63,
+    "naver_verified": true
   },
   {
     "name": "전북대학교병원",
@@ -637,7 +700,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 250000,
-    "id": 64
+    "id": 64,
+    "naver_verified": true
   },
   {
     "name": "원광대학교병원",
@@ -647,7 +711,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 245000,
-    "id": 65
+    "id": 65,
+    "naver_verified": true
   },
   {
     "name": "순천성가롤로병원",
@@ -657,7 +722,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 235000,
-    "id": 66
+    "id": 66,
+    "naver_verified": true
   },
   {
     "name": "목포한국병원",
@@ -667,7 +733,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 240000,
-    "id": 67
+    "id": 67,
+    "naver_verified": true
   },
   {
     "name": "제주한라병원",
@@ -677,7 +744,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 250000,
-    "id": 68
+    "id": 68,
+    "naver_verified": true
   },
   {
     "name": "제주대학교병원",
@@ -687,7 +755,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 260000,
-    "id": 69
+    "id": 69,
+    "naver_verified": true
   },
   {
     "name": "연세참내과의원",
@@ -697,7 +766,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 240000,
-    "id": 70
+    "id": 70,
+    "naver_verified": true
   },
   {
     "name": "서울베스트의원 마곡점",
@@ -707,7 +777,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 230000,
-    "id": 71
+    "id": 71,
+    "naver_verified": true
   },
   {
     "name": "휴내과의원 광화문점",
@@ -717,7 +788,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 250000,
-    "id": 72
+    "id": 72,
+    "naver_verified": true
   },
   {
     "name": "강북삼성병원",
@@ -727,7 +799,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 260000,
-    "id": 73
+    "id": 73,
+    "naver_verified": true
   },
   {
     "name": "아산연세내과의원",
@@ -737,7 +810,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 245000,
-    "id": 74
+    "id": 74,
+    "naver_verified": true
   },
   {
     "name": "서울성모병원",
@@ -747,7 +821,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 270000,
-    "id": 75
+    "id": 75,
+    "naver_verified": true
   },
   {
     "name": "연세참내과의원 여의도점",
@@ -757,7 +832,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 240000,
-    "id": 76
+    "id": 76,
+    "naver_verified": true
   },
   {
     "name": "서울대효병원 광명점",
@@ -767,7 +843,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 250000,
-    "id": 77
+    "id": 77,
+    "naver_verified": true
   },
   {
     "name": "가천대 길병원",
@@ -777,7 +854,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 270000,
-    "id": 78
+    "id": 78,
+    "naver_verified": true
   },
   {
     "name": "고려대학교 구로병원",
@@ -787,7 +865,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 265000,
-    "id": 79
+    "id": 79,
+    "naver_verified": true
   },
   {
     "name": "아름다운내과",
@@ -797,7 +876,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 235000,
-    "id": 80
+    "id": 80,
+    "naver_verified": true
   },
   {
     "name": "분당서울대학교병원",
@@ -807,7 +887,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 280000,
-    "id": 81
+    "id": 81,
+    "naver_verified": true
   },
   {
     "name": "둔산메트로내과의원",
@@ -817,7 +898,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 230000,
-    "id": 82
+    "id": 82,
+    "naver_verified": true
   },
   {
     "name": "충남대학교병원",
@@ -827,7 +909,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 275000,
-    "id": 83
+    "id": 83,
+    "naver_verified": true
   },
   {
     "name": "연세에스의원",
@@ -837,7 +920,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 240000,
-    "id": 84
+    "id": 84,
+    "naver_verified": true
   },
   {
     "name": "아주대학교병원",
@@ -847,7 +931,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 285000,
-    "id": 85
+    "id": 85,
+    "naver_verified": true
   },
   {
     "name": "광주센트럴병원",
@@ -857,7 +942,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 260000,
-    "id": 86
+    "id": 86,
+    "naver_verified": true
   },
   {
     "name": "전남대학교병원",
@@ -867,7 +953,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 270000,
-    "id": 87
+    "id": 87,
+    "naver_verified": true
   },
   {
     "name": "해운대백병원",
@@ -877,7 +964,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 265000,
-    "id": 88
+    "id": 88,
+    "naver_verified": true
   },
   {
     "name": "부산온종합병원",
@@ -887,7 +975,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 255000,
-    "id": 89
+    "id": 89,
+    "naver_verified": true
   },
   {
     "name": "더맑은내과의원",
@@ -897,7 +986,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 230000,
-    "id": 90
+    "id": 90,
+    "naver_verified": true
   },
   {
     "name": "동아대학교병원",
@@ -907,7 +997,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 270000,
-    "id": 91
+    "id": 91,
+    "naver_verified": true
   },
   {
     "name": "대구파티마병원",
@@ -917,7 +1008,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 260000,
-    "id": 92
+    "id": 92,
+    "naver_verified": true
   },
   {
     "name": "경북대학교병원",
@@ -927,7 +1019,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 275000,
-    "id": 93
+    "id": 93,
+    "naver_verified": true
   },
   {
     "name": "영남대학교병원",
@@ -937,7 +1030,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 265000,
-    "id": 94
+    "id": 94,
+    "naver_verified": true
   },
   {
     "name": "에스더블유병원 (SW병원)",
@@ -947,7 +1041,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 250000,
-    "id": 95
+    "id": 95,
+    "naver_verified": true
   },
   {
     "name": "울산대학교병원",
@@ -957,7 +1052,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 280000,
-    "id": 96
+    "id": 96,
+    "naver_verified": true
   },
   {
     "name": "울산병원",
@@ -967,7 +1063,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 260000,
-    "id": 97
+    "id": 97,
+    "naver_verified": true
   },
   {
     "name": "경기도의료원 파주병원",
@@ -977,7 +1074,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 250000,
-    "id": 98
+    "id": 98,
+    "naver_verified": true
   },
   {
     "name": "명지병원",
@@ -987,7 +1085,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 270000,
-    "id": 99
+    "id": 99,
+    "naver_verified": true
   },
   {
     "name": "순천향대학교 부천병원",
@@ -997,7 +1096,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 275000,
-    "id": 100
+    "id": 100,
+    "naver_verified": true
   },
   {
     "name": "한림대학교 동탄성심병원",
@@ -1007,7 +1107,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 280000,
-    "id": 101
+    "id": 101,
+    "naver_verified": true
   },
   {
     "name": "인천성모병원",
@@ -1017,7 +1118,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 270000,
-    "id": 102
+    "id": 102,
+    "naver_verified": true
   },
   {
     "name": "국제성모병원",
@@ -1027,7 +1129,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 265000,
-    "id": 103
+    "id": 103,
+    "naver_verified": true
   },
   {
     "name": "경상국립대학교병원",
@@ -1037,7 +1140,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 270000,
-    "id": 104
+    "id": 104,
+    "naver_verified": true
   },
   {
     "name": "창원경상국립대학교병원",
@@ -1047,7 +1151,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 275000,
-    "id": 105
+    "id": 105,
+    "naver_verified": true
   },
   {
     "name": "원광대학교병원",
@@ -1057,7 +1162,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 260000,
-    "id": 106
+    "id": 106,
+    "naver_verified": true
   },
   {
     "name": "전북대학교병원",
@@ -1067,7 +1173,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 270000,
-    "id": 107
+    "id": 107,
+    "naver_verified": true
   },
   {
     "name": "조선대학교병원",
@@ -1077,7 +1184,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 265000,
-    "id": 108
+    "id": 108,
+    "naver_verified": true
   },
   {
     "name": "대림성모병원",
@@ -1087,7 +1195,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 250000,
-    "id": 109
+    "id": 109,
+    "naver_verified": true
   },
   {
     "name": "서울제이에스정형외과의원",
@@ -1097,7 +1206,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 120000,
-    "id": 110
+    "id": 110,
+    "naver_verified": true
   },
   {
     "name": "참튼튼병원 강동점",
@@ -1107,7 +1217,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 210000,
-    "id": 111
+    "id": 111,
+    "naver_verified": true
   },
   {
     "name": "세란병원",
@@ -1117,7 +1228,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 250000,
-    "id": 112
+    "id": 112,
+    "naver_verified": true
   },
   {
     "name": "마포정형외과의원",
@@ -1127,7 +1239,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 110000,
-    "id": 113
+    "id": 113,
+    "naver_verified": true
   },
   {
     "name": "예손병원",
@@ -1137,7 +1250,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 45000,
-    "id": 114
+    "id": 114,
+    "naver_verified": true
   },
   {
     "name": "바른세상병원",
@@ -1147,7 +1261,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 130000,
-    "id": 115
+    "id": 115,
+    "naver_verified": true
   },
   {
     "name": "서울S재활의학과의원",
@@ -1157,7 +1272,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 150000,
-    "id": 116
+    "id": 116,
+    "naver_verified": true
   },
   {
     "name": "삼성정형외과의원",
@@ -1167,7 +1283,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 240000,
-    "id": 117
+    "id": 117,
+    "naver_verified": true
   },
   {
     "name": "새김재활의학과의원",
@@ -1177,7 +1294,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 100000,
-    "id": 118
+    "id": 118,
+    "naver_verified": true
   },
   {
     "name": "대구우리들병원",
@@ -1187,7 +1305,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 220000,
-    "id": 119
+    "id": 119,
+    "naver_verified": true
   },
   {
     "name": "광주센트럴병원",
@@ -1197,7 +1316,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 140000,
-    "id": 120
+    "id": 120,
+    "naver_verified": true
   },
   {
     "name": "인천21세기병원",
@@ -1207,7 +1327,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 121
+    "id": 121,
+    "naver_verified": true
   },
   {
     "name": "대전우리병원",
@@ -1217,7 +1338,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 125000,
-    "id": 122
+    "id": 122,
+    "naver_verified": true
   },
   {
     "name": "울산우리병원",
@@ -1227,7 +1349,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 260000,
-    "id": 123
+    "id": 123,
+    "naver_verified": true
   },
   {
     "name": "창원힘찬병원",
@@ -1237,7 +1360,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 115000,
-    "id": 124
+    "id": 124,
+    "naver_verified": true
   },
   {
     "name": "천안튼튼마디재활의학과의원",
@@ -1247,7 +1371,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 230000,
-    "id": 125
+    "id": 125,
+    "naver_verified": true
   },
   {
     "name": "전주병원",
@@ -1257,7 +1382,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 95000,
-    "id": 126
+    "id": 126,
+    "naver_verified": true
   },
   {
     "name": "강남나누리병원",
@@ -1267,7 +1393,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 55000,
-    "id": 127
+    "id": 127,
+    "naver_verified": true
   },
   {
     "name": "강동경희대학교병원",
@@ -1277,7 +1404,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 180000,
-    "id": 128
+    "id": 128,
+    "naver_verified": true
   },
   {
     "name": "수원나누리병원",
@@ -1287,7 +1415,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 270000,
-    "id": 129
+    "id": 129,
+    "naver_verified": true
   },
   {
     "name": "광명새움병원",
@@ -1297,7 +1426,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 105000,
-    "id": 130
+    "id": 130,
+    "naver_verified": true
   },
   {
     "name": "분당서울대학교병원",
@@ -1307,7 +1437,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 240000,
-    "id": 131
+    "id": 131,
+    "naver_verified": true
   },
   {
     "name": "고척탑정형외과의원",
@@ -1317,7 +1448,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 90000,
-    "id": 132
+    "id": 132,
+    "naver_verified": true
   },
   {
     "name": "용산정형외과의원",
@@ -1327,7 +1459,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 40000,
-    "id": 133
+    "id": 133,
+    "naver_verified": true
   },
   {
     "name": "안산튼튼병원",
@@ -1337,7 +1470,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 135000,
-    "id": 134
+    "id": 134,
+    "naver_verified": true
   },
   {
     "name": "부천하이병원",
@@ -1347,7 +1481,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 280000,
-    "id": 135
+    "id": 135,
+    "naver_verified": true
   },
   {
     "name": "해운대부민병원",
@@ -1357,7 +1492,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 160000,
-    "id": 136
+    "id": 136,
+    "naver_verified": true
   },
   {
     "name": "부산백병원",
@@ -1367,7 +1503,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 250000,
-    "id": 137
+    "id": 137,
+    "naver_verified": true
   },
   {
     "name": "세명병원",
@@ -1377,7 +1514,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 110000,
-    "id": 138
+    "id": 138,
+    "naver_verified": true
   },
   {
     "name": "칠곡경북대학교병원",
@@ -1387,7 +1525,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 70000,
-    "id": 139
+    "id": 139,
+    "naver_verified": true
   },
   {
     "name": "인천나누리병원",
@@ -1397,7 +1536,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 120000,
-    "id": 140
+    "id": 140,
+    "naver_verified": true
   },
   {
     "name": "부평힘찬병원",
@@ -1407,7 +1547,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 290000,
-    "id": 141
+    "id": 141,
+    "naver_verified": true
   },
   {
     "name": "을지대학교병원",
@@ -1417,7 +1558,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 170000,
-    "id": 142
+    "id": 142,
+    "naver_verified": true
   },
   {
     "name": "대전선병원",
@@ -1427,7 +1569,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 260000,
-    "id": 143
+    "id": 143,
+    "naver_verified": true
   },
   {
     "name": "광주굿모닝병원",
@@ -1437,7 +1580,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 100000,
-    "id": 144
+    "id": 144,
+    "naver_verified": true
   },
   {
     "name": "전남대학교병원",
@@ -1447,7 +1591,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 80000,
-    "id": 145
+    "id": 145,
+    "naver_verified": true
   },
   {
     "name": "제주한라병원",
@@ -1457,7 +1602,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 145000,
-    "id": 146
+    "id": 146,
+    "naver_verified": true
   },
   {
     "name": "포항성모병원",
@@ -1467,7 +1613,8 @@
     "item": "shingles",
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 230000,
-    "id": 147
+    "id": 147,
+    "naver_verified": true
   },
   {
     "name": "순천향대학교 부천병원",
@@ -1477,7 +1624,8 @@
     "item": "manual",
     "treatment": "도수치료 (1회, 60분)",
     "price": 190000,
-    "id": 148
+    "id": 148,
+    "naver_verified": true
   },
   {
     "name": "여수전남병원",
@@ -1487,7 +1635,8 @@
     "item": "gardasil",
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 190000,
-    "id": 149
+    "id": 149,
+    "naver_verified": true
   },
   {
     "name": "연세참내과의원",
@@ -1497,7 +1646,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 65000,
-    "id": 150
+    "id": 150,
+    "naver_verified": true
   },
   {
     "name": "서초탑내과의원",
@@ -1507,7 +1657,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 70000,
-    "id": 151
+    "id": 151,
+    "naver_verified": true
   },
   {
     "name": "잠실연세내과의원",
@@ -1517,7 +1668,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 152
+    "id": 152,
+    "naver_verified": true
   },
   {
     "name": "여의도조앤김내과의원",
@@ -1527,7 +1679,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 75000,
-    "id": 153
+    "id": 153,
+    "naver_verified": true
   },
   {
     "name": "공덕연세내과의원",
@@ -1537,7 +1690,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 154
+    "id": 154,
+    "naver_verified": true
   },
   {
     "name": "종로3가내과의원",
@@ -1547,7 +1701,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 65000,
-    "id": 155
+    "id": 155,
+    "naver_verified": true
   },
   {
     "name": "시청정내과의원",
@@ -1557,7 +1712,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 70000,
-    "id": 156
+    "id": 156,
+    "naver_verified": true
   },
   {
     "name": "청량리365의원",
@@ -1567,7 +1723,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 50000,
-    "id": 157
+    "id": 157,
+    "naver_verified": true
   },
   {
     "name": "강동성모내과의원",
@@ -1577,7 +1734,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 158
+    "id": 158,
+    "naver_verified": true
   },
   {
     "name": "노원연세내과의원",
@@ -1587,7 +1745,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 55000,
-    "id": 159
+    "id": 159,
+    "naver_verified": true
   },
   {
     "name": "분당제일내과의원",
@@ -1597,7 +1756,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 65000,
-    "id": 160
+    "id": 160,
+    "naver_verified": true
   },
   {
     "name": "수원탑내과의원",
@@ -1607,7 +1767,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 161
+    "id": 161,
+    "naver_verified": true
   },
   {
     "name": "일산정발산내과의원",
@@ -1617,7 +1778,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 55000,
-    "id": 162
+    "id": 162,
+    "naver_verified": true
   },
   {
     "name": "부천센트럴내과의원",
@@ -1627,7 +1789,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 163
+    "id": 163,
+    "naver_verified": true
   },
   {
     "name": "평촌탑내과의원",
@@ -1637,7 +1800,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 65000,
-    "id": 164
+    "id": 164,
+    "naver_verified": true
   },
   {
     "name": "인천구월내과의원",
@@ -1647,7 +1811,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 50000,
-    "id": 165
+    "id": 165,
+    "naver_verified": true
   },
   {
     "name": "부평새내과의원",
@@ -1657,7 +1822,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 55000,
-    "id": 166
+    "id": 166,
+    "naver_verified": true
   },
   {
     "name": "해운대메트로이비인후과의원",
@@ -1667,7 +1833,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 55000,
-    "id": 167
+    "id": 167,
+    "naver_verified": true
   },
   {
     "name": "서면삼성내과의원",
@@ -1677,7 +1844,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 168
+    "id": 168,
+    "naver_verified": true
   },
   {
     "name": "동래연세내과의원",
@@ -1687,7 +1855,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 169
+    "id": 169,
+    "naver_verified": true
   },
   {
     "name": "수성베스트내과의원",
@@ -1697,7 +1866,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 65000,
-    "id": 170
+    "id": 170,
+    "naver_verified": true
   },
   {
     "name": "달서성서내과의원",
@@ -1707,7 +1877,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 55000,
-    "id": 171
+    "id": 171,
+    "naver_verified": true
   },
   {
     "name": "광주상무내과의원",
@@ -1717,7 +1888,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 172
+    "id": 172,
+    "naver_verified": true
   },
   {
     "name": "전대후문내과의원",
@@ -1727,7 +1899,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 55000,
-    "id": 173
+    "id": 173,
+    "naver_verified": true
   },
   {
     "name": "둔산탑내과의원",
@@ -1737,7 +1910,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 65000,
-    "id": 174
+    "id": 174,
+    "naver_verified": true
   },
   {
     "name": "노은연세내과의원",
@@ -1747,7 +1921,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 175
+    "id": 175,
+    "naver_verified": true
   },
   {
     "name": "울산삼산내과의원",
@@ -1757,7 +1932,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 50000,
-    "id": 176
+    "id": 176,
+    "naver_verified": true
   },
   {
     "name": "울산성모내과의원",
@@ -1767,7 +1943,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 55000,
-    "id": 177
+    "id": 177,
+    "naver_verified": true
   },
   {
     "name": "춘천미래내과의원",
@@ -1777,7 +1954,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 178
+    "id": 178,
+    "naver_verified": true
   },
   {
     "name": "강릉중앙내과의원",
@@ -1787,7 +1965,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 55000,
-    "id": 179
+    "id": 179,
+    "naver_verified": true
   },
   {
     "name": "청주웰니스내과의원",
@@ -1797,7 +1976,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 180
+    "id": 180,
+    "naver_verified": true
   },
   {
     "name": "천안맑은내과의원",
@@ -1807,7 +1987,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 65000,
-    "id": 181
+    "id": 181,
+    "naver_verified": true
   },
   {
     "name": "전주효자내과의원",
@@ -1817,7 +1998,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 50000,
-    "id": 182
+    "id": 182,
+    "naver_verified": true
   },
   {
     "name": "순천연합내과의원",
@@ -1827,7 +2009,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 55000,
-    "id": 183
+    "id": 183,
+    "naver_verified": true
   },
   {
     "name": "포항탑내과의원",
@@ -1837,7 +2020,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 184
+    "id": 184,
+    "naver_verified": true
   },
   {
     "name": "창원중앙내과의원",
@@ -1847,7 +2031,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 65000,
-    "id": 185
+    "id": 185,
+    "naver_verified": true
   },
   {
     "name": "제주연세내과의원",
@@ -1857,7 +2042,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 70000,
-    "id": 186
+    "id": 186,
+    "naver_verified": true
   },
   {
     "name": "세종새롬내과의원",
@@ -1867,7 +2053,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 187
+    "id": 187,
+    "naver_verified": true
   },
   {
     "name": "구로베스트내과의원",
@@ -1877,7 +2064,8 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
-    "id": 188
+    "id": 188,
+    "naver_verified": true
   },
   {
     "name": "용인수지내과의원",
@@ -1887,6 +2075,7 @@
     "item": "injection",
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 55000,
-    "id": 189
+    "id": 189,
+    "naver_verified": true
   }
 ]
