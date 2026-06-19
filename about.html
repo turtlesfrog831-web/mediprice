@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>서비스 소개 - 메디프라이스 (MediPrice)</title>
+  <link rel="canonical" href="https://mediprice.pages.dev/about.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .subpage-card {
+      background: var(--color-card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      margin: 30px 0;
+      box-shadow: var(--glass-shadow);
+    }
+    .subpage-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--color-secondary);
+      padding-bottom: 10px;
+    }
+    .subpage-content h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+    .subpage-content p {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    .subpage-content ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+      color: var(--color-text-muted);
+    }
+    .subpage-content li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--color-primary);
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: var(--border-radius-md);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+      margin-top: 20px;
+    }
+    .btn-back:hover {
+      background-color: var(--color-secondary);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>🩺 서비스 소개</h1>
+      <p class="header-desc">합리적인 의료소비와 비급여 가격 투명성을 지향하는 정보 플랫폼입니다.</p>
+    </header>
+
+    <main>
+      <div class="subpage-card">
+        <h2 class="subpage-title">메디프라이스(MediPrice)란?</h2>
+        
+        <div class="subpage-content">
+          <p>
+            대한민국의 의료 서비스 수준은 세계 최고를 자랑하지만, 건강보험이 적용되지 않는 <strong>'비급여 진료 항목'</strong>의 가격 정책은 병원별 자율 책정에 의존하고 있어 소비자의 불신이 높습니다. 
+            동일한 자궁경부암 백신(가다실 9가)을 접종하거나 정형외과 도수치료를 받는데도 지역과 의원에 따라 가격 편차가 수십만 원 이상 벌어지며, 정보 비대칭성으로 인해 환자가 바가지를 쓰는 사례가 적지 않게 보고되고 있습니다.
+          </p>
+          
+          <h3>🎯 서비스 목적</h3>
+          <p>
+            본 플랫폼은 보건복지부 및 건강보험심사평가원에서 공개하는 신뢰도 높은 공공데이터를 기반으로, 소비자가 본인이 살고 있는 동네 의원의 비급여 비용이 <strong>전국 및 지역 평균 대비 적정한 수준에 있는지(최저가 등급, 평균 수준, 최고가 경고 등)</strong>를 객관적으로 판별할 수 있도록 돕습니다.
+          </p>
+
+          <h3>🛡️ E-E-A-T (신뢰성과 전문성)</h3>
+          <ul>
+            <li><strong>정확한 데이터 출처</strong>: 공공데이터포털(data.go.kr)에 등록된 건강보험심사평가원의 최신 비급여 진료비 통계 자료를 실시간/정기적으로 연동 및 매핑하여 출력합니다.</li>
+            <li><strong>객관적인 분석 기준</strong>: 시/도 및 시/군/구별 지역 데이터의 정규분포 분포율(평균, 상위 15%, 하위 15%)에 기반하여 가격 경보(최고가/최저가) 시스템을 산출하므로 임의 가공이나 왜곡이 없습니다.</li>
+            <li><strong>비상업적 플랫폼</strong>: 의료 알선 및 중개가 아닌 단순 정보 비교/통계 분석을 목적으로 비상업적으로 운영됩니다.</li>
+          </ul>
+
+          <h3>✉️ 피드백 및 문의</h3>
+          <p>
+            병원 정보 오류 수정 요청이나 제휴 문의는 아래 이메일로 보내주시면 영업일 기준 48시간 이내에 조치 및 회신해 드리겠습니다.<br>
+            📬 <strong>연락처/이메일:</strong> turtlesfrog831@gmail.com
+          </p>
+        </div>
+
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> 홈으로 돌아가기</a>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>🩺 메디프라이스 (MediPrice)</h3>
+          <p>본 서비스는 건강보험심사평가원의 공공 데이터 포털 비급여 진료비용 조회 정보를 기반으로 가공되었습니다.</p>
+        </div>
+        <div class="footer-links">
+          <a href="about.html">서비스 소개</a>
+          <a href="terms.html">이용약관 및 면책조항</a>
+          <a href="privacy-policy.html">개인정보처리방침</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 메디프라이스. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

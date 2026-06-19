@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메디프라이스 - 전국 병원 비급여 가격비교 및 바가지(폭리) 안심 조회기</title>
+  <meta name="description" content="가다실 9가, 대상포진 싱그릭스, 도수치료, 마늘주사 등 병원별로 최대 3배 이상 편차를 보이는 비급여 진료비 최저가/최고가 안심 등급을 실시간으로 조회하여 의료비 바가지를 방지해 드립니다.">
+  <link rel="canonical" href="https://mediprice.pages.dev">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mediprice.pages.dev">
+  <meta property="og:title" content="메디프라이스 - 우리 동네 병원 비급여 '눈탱이' 방지 조회기">
+  <meta property="og:description" content="병원마다 다른 비급여 예방접종 및 치료 비용, 평균 단가 비교로 합리적인 선택을 도와드립니다.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80">
+  
+  <!-- FontAwesome & Custom CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Alert Bar -->
+  <div class="badge-headline" style="display: flex; justify-content: center; margin: 15px auto; width: max-content;">
+    <span class="blink"></span>
+    <strong>실시간 비급여 경보:</strong> 동일 백신/치료비 최대 3.2배 편차 감지됨
+  </div>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>🩺 우리 동네 병원 <span class="highlight">비급여 가격 비교기</span></h1>
+      <p class="header-desc">건강보험 미적용으로 병원 자율 책정되는 비급여 예방접종 및 치료 비용을 실시간 분석하여 최저가와 최고가 안심 구간을 안내합니다.</p>
+    </header>
+
+    <!-- Main controls -->
+    <main>
+      <div class="controls-card">
+        <span class="tabs-label"><i class="fas fa-stethoscope"></i> 진료 및 접종 항목 선택</span>
+        <div class="tabs-container">
+          <button class="tab-btn active" data-item="gardasil">
+            <i class="fas fa-virus-slash"></i>
+            <span>가다실 9가</span>
+          </button>
+          <button class="tab-btn" data-item="shingles">
+            <i class="fas fa-shield-virus"></i>
+            <span>대상포진(싱그릭스)</span>
+          </button>
+          <button class="tab-btn" data-item="manual">
+            <i class="fas fa-bone"></i>
+            <span>도수치료</span>
+          </button>
+          <button class="tab-btn" data-item="injection">
+            <i class="fas fa-syringe"></i>
+            <span>마늘주사/수액</span>
+          </button>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-grid">
+          <div class="filter-group">
+            <label for="citySelect"><i class="fas fa-map-marked-alt"></i> 시/도 선택</label>
+            <select id="citySelect" class="select-custom">
+              <option value="전체">시/도 선택</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="districtSelect"><i class="fas fa-map-marker-alt"></i> 시/군/구 선택</label>
+            <select id="districtSelect" class="select-custom" disabled>
+              <option value="전체">시/군/구 선택</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="searchInput"><i class="fas fa-search"></i> 병원/의원명 검색</label>
+            <input type="text" id="searchInput" class="input-custom" placeholder="병원 이름 또는 키워드를 입력하세요...">
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary metrics -->
+      <div class="summary-bar">
+        <div class="summary-card">
+          <div class="summary-icon lowest"><i class="fas fa-arrow-down"></i></div>
+          <div class="summary-info">
+            <span>조회 조건 내 최저가</span>
+            <strong id="valLowest">0원</strong>
+          </div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-icon average"><i class="fas fa-calculator"></i></div>
+          <div class="summary-info">
+            <span>조회 조건 내 평균가</span>
+            <strong id="valAverage">0원</strong>
+          </div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-icon highest"><i class="fas fa-exclamation-triangle"></i></div>
+          <div class="summary-info">
+            <span>조회 조건 내 최고가</span>
+            <strong id="valHighest">0원</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results List -->
+      <div class="results-header">
+        <span class="results-count" id="resultsCount">검색 결과: 0건</span>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <label for="sortSelect" style="font-size: 13px; font-weight: 600; color: var(--color-text-muted);"><i class="fas fa-sort"></i> 정렬:</label>
+          <select id="sortSelect" class="sort-select">
+            <option value="priceAsc">가격 낮은순 (최저가 순)</option>
+            <option value="priceDesc">가격 높은순 (최고가 순)</option>
+            <option value="nameAsc">병원 가나다순</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="list-container" id="listContainer">
+        <!-- Clinic cards will be dynamically loaded here by app.js -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>🩺 병원 비급여 바가지 방지 조회기</h3>
+          <p>본 서비스는 건강보험심사평가원의 공공 데이터 포털 비급여 진료비용 조회 정보를 기반으로 가공되었습니다.</p>
+        </div>
+        <div class="footer-links">
+          <a href="about.html">서비스 소개</a>
+          <a href="terms.html">이용약관 및 면책조항</a>
+          <a href="privacy-policy.html">개인정보처리방침</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 비급여 바가지 방지 조회기. All Rights Reserved. 본 사이트의 가격 자료는 참고용이며 상세 내용은 각 의료기관에 직접 재확인하시기 바랍니다.
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
