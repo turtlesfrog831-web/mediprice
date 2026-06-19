@@ -21,15 +21,25 @@
 <body>
 
   <!-- Top Alert Bar -->
-  <div class="badge-headline" style="display: flex; justify-content: center; margin: 15px auto; width: max-content;">
-    <span class="blink"></span>
-    <strong>실시간 비급여 경보:</strong> 동일 백신/치료비 최대 3.2배 편차 감지됨
+  <div class="badge-headline-wrapper">
+    <div class="badge-headline">
+      <span class="blink"></span>
+      <strong>실시간 비급여 경보:</strong> 동일 백신/치료비 최대 3.2배 편차 감지됨
+    </div>
   </div>
 
   <div class="container">
     <!-- Header -->
     <header>
-      <h1>🩺 우리 동네 병원 <span class="highlight">비급여 가격 비교기</span></h1>
+      <div class="header-top">
+        <div class="logo">
+          <span class="logo-icon">🩺</span> <strong>메디프라이스</strong>
+        </div>
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="테마 전환">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+      <h1>우리 동네 병원 <span class="highlight">비급여 가격 비교기</span></h1>
       <p class="header-desc">건강보험 미적용으로 병원 자율 책정되는 비급여 예방접종 및 치료 비용을 실시간 분석하여 최저가와 최고가 안심 구간을 안내합니다.</p>
     </header>
 
@@ -102,6 +112,35 @@
         </div>
       </div>
 
+      <!-- Calculator Card -->
+      <div class="calculator-card">
+        <div class="calc-header">
+          <h3><i class="fas fa-wallet"></i> 예상 치료/접종비 계산기</h3>
+          <span class="calc-badge" id="calcItemName">가다실 9가 (3회 기준)</span>
+        </div>
+        <p class="calc-desc">완치 또는 접종 완료를 위한 권장 횟수 기준으로 예상 총 지출액을 계산합니다.</p>
+        <div class="calc-grid">
+          <div class="calc-input-group">
+            <label for="calcSessions">치료/접종 횟수 (회)</label>
+            <div class="sessions-control">
+              <button type="button" id="btnSessionMinus" class="session-btn"><i class="fas fa-minus"></i></button>
+              <input type="number" id="calcSessions" min="1" max="50" value="3" class="input-sessions">
+              <button type="button" id="btnSessionPlus" class="session-btn"><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
+          <div class="calc-result-group">
+            <div class="calc-result-item">
+              <span class="result-label">1회당 가격 (평균 기준)</span>
+              <span class="result-value" id="calcPricePerSession">0원</span>
+            </div>
+            <div class="calc-result-item total">
+              <span class="result-label">총 예상 비용</span>
+              <span class="result-value" id="calcTotalCost">0원</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Results List -->
       <div class="results-header">
         <span class="results-count" id="resultsCount">검색 결과: 0건</span>
@@ -126,17 +165,17 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <h3>🩺 병원 비급여 바가지 방지 조회기</h3>
+          <h3>🩺 메디프라이스 (MediPrice)</h3>
           <p>본 서비스는 건강보험심사평가원의 공공 데이터 포털 비급여 진료비용 조회 정보를 기반으로 가공되었습니다.</p>
         </div>
         <div class="footer-links">
-          <a href="about.html">서비스 소개</a>
-          <a href="terms.html">이용약관 및 면책조항</a>
-          <a href="privacy-policy.html">개인정보처리방침</a>
+          <a href="#">서비스 소개</a>
+          <a href="#">이용약관 및 면책조항</a>
+          <a href="#">개인정보처리방침</a>
         </div>
       </div>
       <div class="footer-bottom">
-        &copy; 2026 비급여 바가지 방지 조회기. All Rights Reserved. 본 사이트의 가격 자료는 참고용이며 상세 내용은 각 의료기관에 직접 재확인하시기 바랍니다.
+        &copy; 2026 메디프라이스. All Rights Reserved. 본 사이트의 가격 자료는 참고용이며 상세 내용은 각 의료기관에 직접 재확인하시기 바랍니다.
       </div>
     </div>
   </footer>
