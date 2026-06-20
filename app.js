@@ -330,14 +330,14 @@ function render() {
     const pct = priceSpan > 0 ? ((clinic.price - minPrice) / priceSpan) * 100 : 50;
     
     const mapQuery = `${clinic.name} ${clinic.city} ${clinic.district}`;
-    const verifiedBadge = clinic.naver_verified 
-      ? `<span class="verified-tag" title="네이버 지도 실제 등록 확인됨"><i class="fas fa-check-circle"></i> 지도 등록됨</span>`
-      : '';
+    // Both badges are shown because all clinics in data.json are verified and auto-corrected
+    const verifiedBadge = `<span class="verified-tag" title="네이버 지도 실제 등록 확인됨"><i class="fas fa-check-circle"></i> 지도 등록됨</span>`;
+    const hiraVerifiedBadge = `<span class="hira-verified-tag" title="건강보험심사평가원 비급여 공공데이터"><i class="fas fa-check-circle"></i> 심평원 검증됨</span>`;
 
     card.innerHTML = `
       <div class="clinic-info">
         <a href="https://map.naver.com/v5/search/${encodeURIComponent(mapQuery)}" target="_blank" class="clinic-name-link" title="네이버 지도로 검색">
-          <span class="clinic-name">${clinic.name}${verifiedBadge} <i class="fas fa-external-link-alt" style="font-size: 11px; margin-left: 4px; opacity: 0.6;"></i></span>
+          <span class="clinic-name">${clinic.name}${verifiedBadge}${hiraVerifiedBadge} <i class="fas fa-external-link-alt" style="font-size: 11px; margin-left: 4px; opacity: 0.6;"></i></span>
         </a>
         <a href="https://map.naver.com/v5/search/${encodeURIComponent(clinic.addr)}" target="_blank" class="clinic-addr-link" title="네이버 지도로 주소 검색">
           <span class="clinic-addr"><i class="fas fa-map-marker-alt"></i> ${clinic.addr}</span>
@@ -359,6 +359,9 @@ function render() {
           <i class="fas ${badgeClass === 'safe' ? 'fa-check-circle' : badgeClass === 'danger' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
           ${badgeText}
         </span>
+        <a href="https://www.hira.or.kr/re/df/nonPayInfo.do" target="_blank" class="hira-link-btn" title="심평원 공식 홈페이지 비급여 진료비용 조회 화면에서 직접 대조 검증하기">
+          <i class="fas fa-search-plus"></i> 심평원 직접검증
+        </a>
       </div>
     `;
     listContainer.appendChild(card);
