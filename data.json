@@ -1,27 +1,5 @@
 [
   {
-    "name": "연세참내과의원",
-    "city": "서울특별시",
-    "district": "강남구",
-    "addr": "서울특별시 강남구 테헤란로 124, 6층 (역삼동)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 210000,
-    "id": 1,
-    "naver_verified": true
-  },
-  {
-    "name": "새얀산부인과의원",
-    "city": "서울특별시",
-    "district": "서초구",
-    "addr": "서울특별시 서초구 서초대로 398, 롯데캐슬클래식 지하1층 (서초동)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 220000,
-    "id": 2,
-    "naver_verified": true
-  },
-  {
     "name": "톡스앤필의원 강남점",
     "city": "서울특별시",
     "district": "강남구",
@@ -66,17 +44,6 @@
     "naver_verified": true
   },
   {
-    "name": "삼성미즈산부인과의원",
-    "city": "서울특별시",
-    "district": "송파구",
-    "addr": "서울특별시 송파구 송파대로 155, 롯데월드타워 11층",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 230000,
-    "id": 7,
-    "naver_verified": true
-  },
-  {
     "name": "강남차병원",
     "city": "서울특별시",
     "district": "강남구",
@@ -85,61 +52,6 @@
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 245000,
     "id": 8,
-    "naver_verified": true
-  },
-  {
-    "name": "닥터스피부과의원 건대점",
-    "city": "서울특별시",
-    "district": "광진구",
-    "addr": "서울특별시 광진구 능동로 110, 3층 (화양동, 건대입구역 2번출구)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 195000,
-    "id": 9,
-    "naver_verified": true
-  },
-  {
-    "name": "고운맘산부인과의원 목동점",
-    "city": "서울특별시",
-    "district": "양천구",
-    "addr": "서울특별시 양천구 오목로 345, 6층 (목동, 슬비아빌딩)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 210000,
-    "id": 10,
-    "naver_verified": true
-  },
-  {
-    "name": "밝은미래내과의원",
-    "city": "서울특별시",
-    "district": "동대문구",
-    "addr": "서울특별시 동대문구 천호대로 105, 3층 (용두동)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 200000,
-    "id": 11,
-    "naver_verified": true
-  },
-  {
-    "name": "연세W산부인과의원 신촌점",
-    "city": "서울특별시",
-    "district": "서대문구",
-    "addr": "서울특별시 서대문구 신촌로 109, 2층 (창천동, 르메이에르타운 5차)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 225000,
-    "id": 12,
-    "naver_verified": true
-  },
-  {
-    "name": "탑클래스피부과의원 홍대점",
-    "city": "서울특별시",
-    "district": "마포구",
-    "addr": "서울특별시 마포구 양화로 161, 6층 (동교동, 홍대입구역)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 198000,
-    "id": 13,
     "naver_verified": true
   },
   {
@@ -165,17 +77,6 @@
     "naver_verified": true
   },
   {
-    "name": "우리들산부인과의원",
-    "city": "경기도",
-    "district": "수원시 팔달구",
-    "addr": "경기도 수원시 팔달구 매산로 54, 4층 (매산로1가)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 210000,
-    "id": 16,
-    "naver_verified": true
-  },
-  {
     "name": "동탄서울내과의원",
     "city": "경기도",
     "district": "화성시",
@@ -198,17 +99,6 @@
     "naver_verified": true
   },
   {
-    "name": "나수미산부인과의원",
-    "city": "경기도",
-    "district": "고양시 일산서구",
-    "addr": "경기도 고양시 일산서구 주엽로 28, 5층 (주엽동, 동부썬프라자)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 215000,
-    "id": 19,
-    "naver_verified": true
-  },
-  {
     "name": "다정피부과의원",
     "city": "경기도",
     "district": "부천시 원미구",
@@ -217,17 +107,6 @@
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 190000,
     "id": 20,
-    "naver_verified": true
-  },
-  {
-    "name": "정재헌내과의원",
-    "city": "경기도",
-    "district": "성남시 중원구",
-    "addr": "경기도 성남시 중원구 성남대로 997, 2층 (하대원동)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 205000,
-    "id": 21,
     "naver_verified": true
   },
   {
@@ -242,17 +121,6 @@
     "naver_verified": true
   },
   {
-    "name": "새롬산부인과의원",
-    "city": "경기도",
-    "district": "평택시",
-    "addr": "경기도 평택시 평택5로 20번길 20, 3층 (합정동)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 210000,
-    "id": 23,
-    "naver_verified": true
-  },
-  {
     "name": "연세웰내과의원",
     "city": "경기도",
     "district": "의정부시",
@@ -261,28 +129,6 @@
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 200000,
     "id": 24,
-    "naver_verified": true
-  },
-  {
-    "name": "톡스앤필의원 수원점",
-    "city": "경기도",
-    "district": "수원시 팔달구",
-    "addr": "경기도 수원시 팔달구 향교로 1, 4층 (매산로1가)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 195000,
-    "id": 25,
-    "naver_verified": true
-  },
-  {
-    "name": "연세맘산부인과의원",
-    "city": "경기도",
-    "district": "안양시 동안구",
-    "addr": "경기도 안양시 동안구 시민대로 180, 2층 (호계동, 지스퀘어)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 220000,
-    "id": 26,
     "naver_verified": true
   },
   {
@@ -297,17 +143,6 @@
     "naver_verified": true
   },
   {
-    "name": "우리여성병원",
-    "city": "경기도",
-    "district": "김포시",
-    "addr": "경기도 김포시 김포대로 849",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 230000,
-    "id": 28,
-    "naver_verified": true
-  },
-  {
     "name": "가천대 길병원",
     "city": "인천광역시",
     "district": "남동구",
@@ -316,28 +151,6 @@
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 265000,
     "id": 29,
-    "naver_verified": true
-  },
-  {
-    "name": "연세하나산부인과의원",
-    "city": "인천광역시",
-    "district": "부평구",
-    "addr": "인천광역시 부평구 부평대로 71, 3층 (부평동, 부평빌딩)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 215000,
-    "id": 30,
-    "naver_verified": true
-  },
-  {
-    "name": "고운맘내과의원",
-    "city": "인천광역시",
-    "district": "연수구",
-    "addr": "인천광역시 연수구 송도과학로 16, 롯데캐슬캠퍼스타운 에비뉴 2층 201호 (송도동)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 200000,
-    "id": 31,
     "naver_verified": true
   },
   {
@@ -363,17 +176,6 @@
     "naver_verified": true
   },
   {
-    "name": "굿모닝산부인과의원",
-    "city": "인천광역시",
-    "district": "미추홀구",
-    "addr": "인천광역시 미추홀구 주안로 108, 3층 (주안동)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 210000,
-    "id": 34,
-    "naver_verified": true
-  },
-  {
     "name": "부산서울내과의원",
     "city": "부산광역시",
     "district": "부산진구",
@@ -382,61 +184,6 @@
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 205000,
     "id": 35,
-    "naver_verified": true
-  },
-  {
-    "name": "센텀맑은샘내과의원",
-    "city": "부산광역시",
-    "district": "해운대구",
-    "addr": "부산 해운대구 센텀동로 41 센텀벤처타운 10층",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 210000,
-    "id": 36,
-    "naver_verified": true
-  },
-  {
-    "name": "연세미래산부인과의원",
-    "city": "부산광역시",
-    "district": "수영구",
-    "addr": "부산 수영구 수영로 733",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 220000,
-    "id": 37,
-    "naver_verified": true
-  },
-  {
-    "name": "광안튼튼내과의원",
-    "city": "부산광역시",
-    "district": "수영구",
-    "addr": "부산 수영구 광안로 65 리더스빌딩 3층",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 200000,
-    "id": 38,
-    "naver_verified": true
-  },
-  {
-    "name": "하단맑은내과의원",
-    "city": "부산광역시",
-    "district": "사하구",
-    "addr": "부산 사하구 낙동남로 1403 하단SK뷰 상가 2층",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 215000,
-    "id": 39,
-    "naver_verified": true
-  },
-  {
-    "name": "우리베스트내과의원",
-    "city": "대구광역시",
-    "district": "달서구",
-    "addr": "대구 달서구 달구벌대로 1664 영남네오팰리스 2층",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 225000,
-    "id": 40,
     "naver_verified": true
   },
   {
@@ -470,28 +217,6 @@
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 240000,
     "id": 43,
-    "naver_verified": true
-  },
-  {
-    "name": "미래여성병원",
-    "city": "대구광역시",
-    "district": "수성구",
-    "addr": "대구 수성구 청수로 405",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 220000,
-    "id": 44,
-    "naver_verified": true
-  },
-  {
-    "name": "더필산부인과의원",
-    "city": "울산광역시",
-    "district": "남구",
-    "addr": "울산 남구 돋질로 291",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 235000,
-    "id": 45,
     "naver_verified": true
   },
   {
@@ -759,17 +484,6 @@
     "naver_verified": true
   },
   {
-    "name": "연세참내과의원",
-    "city": "서울특별시",
-    "district": "강남구",
-    "addr": "서울특별시 강남구 테헤란로 134 P&T빌딩 4층",
-    "item": "shingles",
-    "treatment": "대상포진 예방접종 (싱그릭스 1회)",
-    "price": 240000,
-    "id": 70,
-    "naver_verified": true
-  },
-  {
     "name": "서울베스트의원 마곡점",
     "city": "서울특별시",
     "district": "강서구",
@@ -778,17 +492,6 @@
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 230000,
     "id": 71,
-    "naver_verified": true
-  },
-  {
-    "name": "휴내과의원 광화문점",
-    "city": "서울특별시",
-    "district": "종로구",
-    "addr": "서울특별시 종로구 종로 33 그랑서울 2층",
-    "item": "shingles",
-    "treatment": "대상포진 예방접종 (싱그릭스 1회)",
-    "price": 250000,
-    "id": 72,
     "naver_verified": true
   },
   {
@@ -825,28 +528,6 @@
     "naver_verified": true
   },
   {
-    "name": "연세참내과의원 여의도점",
-    "city": "서울특별시",
-    "district": "영등포구",
-    "addr": "서울특별시 영등포구 국제금융로 70 3층",
-    "item": "shingles",
-    "treatment": "대상포진 예방접종 (싱그릭스 1회)",
-    "price": 240000,
-    "id": 76,
-    "naver_verified": true
-  },
-  {
-    "name": "서울대효병원 광명점",
-    "city": "경기도",
-    "district": "광명시",
-    "addr": "경기도 광명시 하안로 167",
-    "item": "shingles",
-    "treatment": "대상포진 예방접종 (싱그릭스 1회)",
-    "price": 250000,
-    "id": 77,
-    "naver_verified": true
-  },
-  {
     "name": "가천대 길병원",
     "city": "인천광역시",
     "district": "남동구",
@@ -869,17 +550,6 @@
     "naver_verified": true
   },
   {
-    "name": "아름다운내과",
-    "city": "경기도",
-    "district": "성남시 분당구",
-    "addr": "경기도 성남시 분당구 정자일로 132 엠코헤리츠 106동 2층",
-    "item": "shingles",
-    "treatment": "대상포진 예방접종 (싱그릭스 1회)",
-    "price": 235000,
-    "id": 80,
-    "naver_verified": true
-  },
-  {
     "name": "분당서울대학교병원",
     "city": "경기도",
     "district": "성남시 분당구",
@@ -888,17 +558,6 @@
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 280000,
     "id": 81,
-    "naver_verified": true
-  },
-  {
-    "name": "둔산메트로내과의원",
-    "city": "대전광역시",
-    "district": "서구",
-    "addr": "대전광역시 서구 계룡로 594 둔산메트로존 3층",
-    "item": "shingles",
-    "treatment": "대상포진 예방접종 (싱그릭스 1회)",
-    "price": 230000,
-    "id": 82,
     "naver_verified": true
   },
   {
@@ -946,17 +605,6 @@
     "naver_verified": true
   },
   {
-    "name": "전남대학교병원",
-    "city": "광주광역시",
-    "district": "동구",
-    "addr": "광주광역시 동구 제봉로 42",
-    "item": "shingles",
-    "treatment": "대상포진 예방접종 (싱그릭스 1회)",
-    "price": 270000,
-    "id": 87,
-    "naver_verified": true
-  },
-  {
     "name": "해운대백병원",
     "city": "부산광역시",
     "district": "해운대구",
@@ -976,17 +624,6 @@
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 255000,
     "id": 89,
-    "naver_verified": true
-  },
-  {
-    "name": "더맑은내과의원",
-    "city": "부산광역시",
-    "district": "동래구",
-    "addr": "부산광역시 동래구 명륜로 123",
-    "item": "shingles",
-    "treatment": "대상포진 예방접종 (싱그릭스 1회)",
-    "price": 230000,
-    "id": 90,
     "naver_verified": true
   },
   {
@@ -1031,17 +668,6 @@
     "treatment": "대상포진 예방접종 (싱그릭스 1회)",
     "price": 265000,
     "id": 94,
-    "naver_verified": true
-  },
-  {
-    "name": "에스더블유병원 (SW병원)",
-    "city": "울산광역시",
-    "district": "남구",
-    "addr": "울산광역시 남구 문수로 354",
-    "item": "shingles",
-    "treatment": "대상포진 예방접종 (싱그릭스 1회)",
-    "price": 250000,
-    "id": 95,
     "naver_verified": true
   },
   {
@@ -1210,17 +836,6 @@
     "naver_verified": true
   },
   {
-    "name": "참튼튼병원 강동점",
-    "city": "서울특별시",
-    "district": "강동구",
-    "addr": "서울특별시 강동구 성내로 48 (성내동)",
-    "item": "gardasil",
-    "treatment": "자궁경부암 예방접종 (가다실 9가)",
-    "price": 210000,
-    "id": 111,
-    "naver_verified": true
-  },
-  {
     "name": "세란병원",
     "city": "서울특별시",
     "district": "종로구",
@@ -1287,17 +902,6 @@
     "naver_verified": true
   },
   {
-    "name": "새김재활의학과의원",
-    "city": "부산광역시",
-    "district": "동래구",
-    "addr": "부산광역시 동래구 온천장로 115 (온천동, 동래럭키상가)",
-    "item": "manual",
-    "treatment": "도수치료 (1회, 60분)",
-    "price": 100000,
-    "id": 118,
-    "naver_verified": true
-  },
-  {
     "name": "대구우리들병원",
     "city": "대구광역시",
     "district": "수성구",
@@ -1306,17 +910,6 @@
     "treatment": "자궁경부암 예방접종 (가다실 9가)",
     "price": 220000,
     "id": 119,
-    "naver_verified": true
-  },
-  {
-    "name": "광주센트럴병원",
-    "city": "광주광역시",
-    "district": "서구",
-    "addr": "광주광역시 서구 상무대로 886 (치평동)",
-    "item": "manual",
-    "treatment": "도수치료 (1회, 60분)",
-    "price": 140000,
-    "id": 120,
     "naver_verified": true
   },
   {
@@ -1507,17 +1100,6 @@
     "naver_verified": true
   },
   {
-    "name": "세명병원",
-    "city": "대구광역시",
-    "district": "서구",
-    "addr": "대구광역시 서구 국채보상로 300 (내당동)",
-    "item": "manual",
-    "treatment": "도수치료 (1회, 60분)",
-    "price": 110000,
-    "id": 138,
-    "naver_verified": true
-  },
-  {
     "name": "칠곡경북대학교병원",
     "city": "대구광역시",
     "district": "북구",
@@ -1584,17 +1166,6 @@
     "naver_verified": true
   },
   {
-    "name": "전남대학교병원",
-    "city": "광주광역시",
-    "district": "동구",
-    "addr": "광주광역시 동구 제봉로 42 (학동)",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 80000,
-    "id": 145,
-    "naver_verified": true
-  },
-  {
     "name": "제주한라병원",
     "city": "제주특별자치도",
     "district": "제주시",
@@ -1639,17 +1210,6 @@
     "naver_verified": true
   },
   {
-    "name": "연세참내과의원",
-    "city": "서울특별시",
-    "district": "강남구",
-    "addr": "서울특별시 강남구 테헤란로 134",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 65000,
-    "id": 150,
-    "naver_verified": true
-  },
-  {
     "name": "서초탑내과의원",
     "city": "서울특별시",
     "district": "서초구",
@@ -1672,17 +1232,6 @@
     "naver_verified": true
   },
   {
-    "name": "여의도조앤김내과의원",
-    "city": "서울특별시",
-    "district": "영등포구",
-    "addr": "서울특별시 영등포구 국제금융로 78",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 75000,
-    "id": 153,
-    "naver_verified": true
-  },
-  {
     "name": "공덕연세내과의원",
     "city": "서울특별시",
     "district": "마포구",
@@ -1702,17 +1251,6 @@
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 65000,
     "id": 155,
-    "naver_verified": true
-  },
-  {
-    "name": "시청정내과의원",
-    "city": "서울특별시",
-    "district": "중구",
-    "addr": "서울특별시 중구 세종대로 110",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 70000,
-    "id": 156,
     "naver_verified": true
   },
   {
@@ -1746,17 +1284,6 @@
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 55000,
     "id": 159,
-    "naver_verified": true
-  },
-  {
-    "name": "분당제일내과의원",
-    "city": "경기도",
-    "district": "성남시 분당구",
-    "addr": "경기도 성남시 분당구 정자일로 192",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 65000,
-    "id": 160,
     "naver_verified": true
   },
   {
@@ -1815,28 +1342,6 @@
     "naver_verified": true
   },
   {
-    "name": "부평새내과의원",
-    "city": "인천광역시",
-    "district": "부평구",
-    "addr": "인천광역시 부평구 신트리로60번길 10",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 55000,
-    "id": 166,
-    "naver_verified": true
-  },
-  {
-    "name": "해운대메트로이비인후과의원",
-    "city": "부산광역시",
-    "district": "해운대구",
-    "addr": "부산광역시 해운대구 해운대로 628",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 55000,
-    "id": 167,
-    "naver_verified": true
-  },
-  {
     "name": "서면삼성내과의원",
     "city": "부산광역시",
     "district": "진구",
@@ -1856,17 +1361,6 @@
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
     "id": 169,
-    "naver_verified": true
-  },
-  {
-    "name": "수성베스트내과의원",
-    "city": "대구광역시",
-    "district": "수성구",
-    "addr": "대구광역시 수성구 동대구로 398",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 65000,
-    "id": 170,
     "naver_verified": true
   },
   {
@@ -1892,17 +1386,6 @@
     "naver_verified": true
   },
   {
-    "name": "전대후문내과의원",
-    "city": "광주광역시",
-    "district": "북구",
-    "addr": "광주광역시 북구 용봉로 123",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 55000,
-    "id": 173,
-    "naver_verified": true
-  },
-  {
     "name": "둔산탑내과의원",
     "city": "대전광역시",
     "district": "서구",
@@ -1922,61 +1405,6 @@
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 60000,
     "id": 175,
-    "naver_verified": true
-  },
-  {
-    "name": "울산삼산내과의원",
-    "city": "울산광역시",
-    "district": "남구",
-    "addr": "울산광역시 남구 삼산로 200",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 50000,
-    "id": 176,
-    "naver_verified": true
-  },
-  {
-    "name": "울산성모내과의원",
-    "city": "울산광역시",
-    "district": "중구",
-    "addr": "울산광역시 중구 학성로 55",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 55000,
-    "id": 177,
-    "naver_verified": true
-  },
-  {
-    "name": "춘천미래내과의원",
-    "city": "강원특별자치도",
-    "district": "춘천시",
-    "addr": "강원특별자치도 춘천시 공지로 277",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 60000,
-    "id": 178,
-    "naver_verified": true
-  },
-  {
-    "name": "강릉중앙내과의원",
-    "city": "강원특별자치도",
-    "district": "강릉시",
-    "addr": "강원특별자치도 강릉시 경강로 2005",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 55000,
-    "id": 179,
-    "naver_verified": true
-  },
-  {
-    "name": "청주웰니스내과의원",
-    "city": "충청북도",
-    "district": "청주시 흥덕구",
-    "addr": "충청북도 청주시 흥덕구 가경동 1464",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 60000,
-    "id": 180,
     "naver_verified": true
   },
   {
@@ -2024,17 +1452,6 @@
     "naver_verified": true
   },
   {
-    "name": "창원중앙내과의원",
-    "city": "경상남도",
-    "district": "창원시 성산구",
-    "addr": "경상남도 창원시 성산구 중앙대로 100",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 65000,
-    "id": 185,
-    "naver_verified": true
-  },
-  {
     "name": "제주연세내과의원",
     "city": "제주특별자치도",
     "district": "제주시",
@@ -2043,17 +1460,6 @@
     "treatment": "영양성 수액 (마늘/신데렐라 주사)",
     "price": 70000,
     "id": 186,
-    "naver_verified": true
-  },
-  {
-    "name": "세종새롬내과의원",
-    "city": "세종특별자치시",
-    "district": "세종시",
-    "addr": "세종특별자치시 새롬중앙로 33",
-    "item": "injection",
-    "treatment": "영양성 수액 (마늘/신데렐라 주사)",
-    "price": 60000,
-    "id": 187,
     "naver_verified": true
   },
   {
