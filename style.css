@@ -920,3 +920,97 @@ body.dark-theme footer {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.4);
 }
+
+/* ==========================================================================
+   HIRA Integration Badges & Buttons
+   ========================================================================== */
+.hira-verified-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background-color: #f0fdfa; /* Teal 50 */
+  color: #0d9488;            /* Teal 600 */
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-left: 6px;
+  border: 1px solid rgba(13, 148, 136, 0.15);
+  vertical-align: middle;
+}
+
+body.dark-theme .hira-verified-tag {
+  background-color: rgba(20, 184, 166, 0.15);
+  color: #14b8a6;
+  border-color: rgba(20, 184, 166, 0.15);
+}
+
+.hira-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(15, 118, 110, 0.08); /* Accent transparent */
+  color: var(--color-accent);
+  border: 1px solid rgba(15, 118, 110, 0.2);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.hira-link-btn:hover {
+  background: var(--color-accent);
+  color: #ffffff !important;
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
+}
+
+body.dark-theme .hira-link-btn {
+  background: rgba(20, 184, 166, 0.08);
+  color: #14b8a6;
+  border-color: rgba(20, 184, 166, 0.2);
+}
+
+body.dark-theme .hira-link-btn:hover {
+  background: #14b8a6;
+  color: #0f172a !important;
+  border-color: #14b8a6;
+}
+
+.hira-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(13, 148, 136, 0.06);
+  border: 1px solid rgba(13, 148, 136, 0.15);
+  color: var(--color-accent);
+  padding: 10px 16px;
+  border-radius: var(--border-radius-md);
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 16px;
+  text-align: left;
+}
+
+body.dark-theme .hira-banner {
+  background: rgba(20, 184, 166, 0.06);
+  border-color: rgba(20, 184, 166, 0.15);
+  color: #14b8a6;
+}
+
+.hira-banner i {
+  font-size: 15px;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.hira-banner strong {
+  font-weight: 700;
+}
+
+
