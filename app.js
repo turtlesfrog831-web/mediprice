@@ -359,7 +359,7 @@ function render() {
           <i class="fas ${badgeClass === 'safe' ? 'fa-check-circle' : badgeClass === 'danger' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
           ${badgeText}
         </span>
-        <a href="https://www.hira.or.kr" target="_blank" rel="noopener noreferrer" class="hira-link-btn" title="건강보험심사평가원(심평원) 공식 홈페이지로 이동하여 비급여 가격 교차 검증하기">
+        <a href="https://www.hira.or.kr/npay/index.do?pgmid=HIRAA030009000000&WT.gnb=%EB%B9%84%EA%B8%89%EC%97%AC%EC%A7%84%EB%A3%8C%EB%B9%84%EC%A0%95%EB%B3%B4#app%2Frb%2FnpayDamtInfoList" target="_blank" rel="noopener noreferrer" class="hira-link-btn" title="건강보험심사평가원(심평원) 공식 비급여 진료비 조회 페이지에서 직접 대조 검증하기">
           <i class="fas fa-search-plus"></i> 심평원 직접검증
         </a>
       </div>
