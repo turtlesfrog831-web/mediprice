@@ -359,7 +359,7 @@ function render() {
           <i class="fas ${badgeClass === 'safe' ? 'fa-check-circle' : badgeClass === 'danger' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
           ${badgeText}
         </span>
-        <a href="https://www.hira.or.kr/re/df/nonPayInfo.do" target="_blank" class="hira-link-btn" title="심평원 공식 홈페이지 비급여 진료비용 조회 화면에서 직접 대조 검증하기">
+        <a href="https://www.hira.or.kr/rf/evl/nonpay/list.do" target="_blank" class="hira-link-btn" title="심평원 공식 홈페이지 비급여 진료비용 조회 화면에서 직접 대조 검증하기">
           <i class="fas fa-search-plus"></i> 심평원 직접검증
         </a>
       </div>
