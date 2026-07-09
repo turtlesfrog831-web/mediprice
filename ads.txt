@@ -1,0 +1,2 @@
+# Google AdSense Publisher Validation File
+google.com, pub-6021174212794541, DIRECT, f08c47fec0942fa0
