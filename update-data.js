@@ -33,21 +33,47 @@ async function updateData() {
     console.log(`📡 HIRA API 호출 중: [${target.displayName}] 코드 = ${target.brdId}`);
     
     try {
-      const params = new URLSearchParams({
+      let items = null;
+      
+      // 1. Try querying with itemCd
+      const paramsItemCd = new URLSearchParams({
         serviceKey: API_KEY,
         pageNo: "1",
         numOfRows: "1000",
         _type: "json",
         itemCd: target.brdId
       });
-
-      const response = await fetch(`${API_URL}?${params.toString()}`);
-      if (!response.ok) {
-        throw new Error(`HTTP 에러 발생: ${response.status}`);
+      
+      try {
+        let response = await fetch(`${API_URL}?${paramsItemCd.toString()}`);
+        if (response.ok) {
+          const resJson = await response.json();
+          items = resJson.response?.body?.items?.item;
+        }
+      } catch (e) {
+        console.log(`⚠️ itemCd query failed: ${e.message}`);
       }
-
-      const resJson = await response.json();
-      const items = resJson.response?.body?.items?.item;
+      
+      // 2. If no items returned, fallback to npayCd
+      if (!items) {
+        const paramsNpayCd = new URLSearchParams({
+          serviceKey: API_KEY,
+          pageNo: "1",
+          numOfRows: "1000",
+          _type: "json",
+          npayCd: target.brdId
+        });
+        
+        try {
+          let response = await fetch(`${API_URL}?${paramsNpayCd.toString()}`);
+          if (response.ok) {
+            const resJson = await response.json();
+            items = resJson.response?.body?.items?.item;
+          }
+        } catch (e) {
+          console.log(`⚠️ npayCd query failed: ${e.message}`);
+        }
+      }
 
       if (!items) {
         console.log(`⚠️ 주의: [${target.displayName}]에 해당하는 API 데이터가 없습니다.`);
@@ -58,11 +84,6 @@ async function updateData() {
       console.log(`✅ [${target.displayName}] 파싱 성공: ${itemList.length}개 병원 데이터 확보`);
 
       itemList.forEach(apiItem => {
-        // Safety guard: skip if returned item code does not match our target code
-        if (apiItem.npayCd !== target.brdId) {
-          return;
-        }
-
         const clinicName = apiItem.yadmNm;
         const city = apiItem.sidoCdNm;
         const district = apiItem.sgguCdNm;
