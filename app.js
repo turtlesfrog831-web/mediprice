@@ -1,14 +1,56 @@
 let clinicData = [];
 
-// 행정구역 데이터
-const REGION_DATA = {
-  "전체": [],
-  "서울특별시": ["전체", "강남구", "서초구", "송파구", "마포구", "종로구", "영등포구"],
-  "부산광역시": ["전체", "해운대구", "동래구", "연제구", "부산진구"],
-  "대구광역시": ["전체", "중구"],
-  "인천광역시": ["전체", "연수구"],
-  "경기도": ["전체", "고양시 일산동구", "수원시 팔달구", "수원시 영통구", "성남시 수정구"]
+// 행정구역 데이터 (data.json에서 동적으로 추출하여 채워집니다)
+let REGION_DATA = {
+  "전체": []
 };
+
+const CITY_NAMES = {
+  "전체": "시/도 선택",
+  "서울": "서울특별시",
+  "부산": "부산광역시",
+  "대구": "대구광역시",
+  "인천": "인천광역시",
+  "광주": "광주광역시",
+  "대전": "대전광역시",
+  "울산": "울산광역시",
+  "세종": "세종특별자치시",
+  "경기": "경기도",
+  "강원": "강원특별자치도",
+  "충북": "충청북도",
+  "충남": "충청남도",
+  "전북": "전북특별자치도",
+  "전남": "전라남도",
+  "경북": "경상북도",
+  "경남": "경상남도",
+  "제주": "제주특별자치도"
+};
+
+function buildRegionData() {
+  REGION_DATA = { "전체": [] };
+  
+  clinicData.forEach(item => {
+    const city = item.city;
+    const district = item.district;
+    
+    if (city) {
+      if (!REGION_DATA[city]) {
+        REGION_DATA[city] = new Set();
+      }
+      if (district) {
+        REGION_DATA[city].add(district);
+      }
+    }
+  });
+  
+  // Set을 정렬된 배열로 변환하고 맨 앞에 '전체' 추가
+  Object.keys(REGION_DATA).forEach(city => {
+    if (city !== "전체") {
+      const districtsArr = Array.from(REGION_DATA[city]).sort();
+      REGION_DATA[city] = ["전체", ...districtsArr];
+    }
+  });
+}
 
 // ==========================================================================
 // Application State
@@ -46,6 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(res => res.json())
     .then(data => {
       clinicData = data;
+      buildRegionData();
+      initRegions();
       render();
     })
     .catch(err => {
@@ -101,13 +145,26 @@ document.addEventListener("DOMContentLoaded", () => {
 // ==========================================================================
 function initRegions() {
   citySelect.innerHTML = "";
-  Object.keys(REGION_DATA).forEach(city => {
+  
+  const sortedCities = Object.keys(REGION_DATA).sort((a, b) => {
+    if (a === "전체") return -1;
+    if (b === "전체") return 1;
+    
+    const nameA = CITY_NAMES[a] || a;
+    const nameB = CITY_NAMES[b] || b;
+    return nameA.localeCompare(nameB, "ko");
+  });
+  
+  sortedCities.forEach(city => {
     const opt = document.createElement("option");
     opt.value = city;
-    opt.textContent = city;
+    opt.textContent = CITY_NAMES[city] || city;
     citySelect.appendChild(opt);
   });
-  updateDistrictOptions("전체");
+  
+  citySelect.value = currentCity;
+  updateDistrictOptions(currentCity);
+  districtSelect.value = currentDistrict;
 }
 
 function updateDistrictOptions(city) {
