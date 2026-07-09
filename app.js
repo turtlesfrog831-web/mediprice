@@ -1,5 +1,15 @@
 let clinicData = [];
 
+// 행정구역 데이터
+const REGION_DATA = {
+  "전체": [],
+  "서울특별시": ["전체", "강남구", "서초구", "송파구", "마포구", "종로구", "영등포구"],
+  "부산광역시": ["전체", "해운대구", "동래구", "연제구", "부산진구"],
+  "대구광역시": ["전체", "중구"],
+  "인천광역시": ["전체", "연수구"],
+  "경기도": ["전체", "고양시 일산동구", "수원시 팔달구", "수원시 영통구", "성남시 수정구"]
+};
+
 // ==========================================================================
 // Application State
 // ==========================================================================
@@ -9,25 +19,9 @@ let currentDistrict = "전체";
 let searchQuery = "";
 let currentSort = "priceAsc"; // Price Low to High
 
-// Default recommended sessions for each item
-const DEFAULT_SESSIONS = {
-  "gardasil": 3,
-  "shingles": 2,
-  "manual": 10,
-  "injection": 5
-};
-
-const ITEM_NAMES = {
-  "gardasil": "가다실 9가",
-  "shingles": "대상포진 (싱그릭스)",
-  "manual": "도수치료",
-  "injection": "마늘주사/수액"
-};
-
 // ==========================================================================
 // Elements
 // ==========================================================================
-const themeToggle = document.getElementById("themeToggle");
 const tabButtons = document.querySelectorAll(".tab-btn");
 const citySelect = document.getElementById("citySelect");
 const districtSelect = document.getElementById("districtSelect");
@@ -40,19 +34,11 @@ const valLowest = document.getElementById("valLowest");
 const valAverage = document.getElementById("valAverage");
 const valHighest = document.getElementById("valHighest");
 
-// Calculator Elements
-const calcItemName = document.getElementById("calcItemName");
-const calcSessions = document.getElementById("calcSessions");
-const btnSessionMinus = document.getElementById("btnSessionMinus");
-const btnSessionPlus = document.getElementById("btnSessionPlus");
-const calcPricePerSession = document.getElementById("calcPricePerSession");
-const calcTotalCost = document.getElementById("calcTotalCost");
-
 // ==========================================================================
 // Init & Event Listeners
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
-  initTheme();
+  initRegions();
   injectFaqSchema();
   
   // Fetch dynamic data.json
@@ -60,8 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(res => res.json())
     .then(data => {
       clinicData = data;
-      initRegions(); // Dynamically generate region dropdown options
-      resetCalculator();
       render();
     })
     .catch(err => {
@@ -74,9 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     });
   
-  // Theme Toggle
-  themeToggle.addEventListener("click", toggleTheme);
-
   // Category tabs
   tabButtons.forEach(btn => {
     btn.addEventListener("click", (e) => {
@@ -84,8 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const target = e.currentTarget;
       target.classList.add("active");
       currentItem = target.dataset.item;
-      
-      resetCalculator();
       render();
     });
   });
@@ -115,78 +94,19 @@ document.addEventListener("DOMContentLoaded", () => {
     currentSort = e.target.value;
     render();
   });
-
-  // Calculator sessions change
-  calcSessions.addEventListener("input", () => {
-    let val = parseInt(calcSessions.value);
-    if (isNaN(val) || val < 1) val = 1;
-    calcSessions.value = val;
-    calculateTotalExpenses();
-  });
-
-  btnSessionMinus.addEventListener("click", () => {
-    let val = parseInt(calcSessions.value) || 1;
-    if (val > 1) {
-      calcSessions.value = val - 1;
-      calculateTotalExpenses();
-    }
-  });
-
-  btnSessionPlus.addEventListener("click", () => {
-    let val = parseInt(calcSessions.value) || 1;
-    if (val < 99) {
-      calcSessions.value = val + 1;
-      calculateTotalExpenses();
-    }
-  });
 });
 
 // ==========================================================================
-// Theme Logic (Dark/Light)
-// ==========================================================================
-function initTheme() {
-  const savedTheme = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  
-  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-    document.body.classList.add("dark-theme");
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-  } else {
-    document.body.classList.remove("dark-theme");
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-  }
-}
-
-function toggleTheme() {
-  const isDark = document.body.classList.toggle("dark-theme");
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-  themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-}
-
-// ==========================================================================
-// Region Select Initialization (Dynamic from data.json)
+// Helper Functions
 // ==========================================================================
 function initRegions() {
-  // Extract unique cities
-  const cities = ["전체", ...new Set(clinicData.map(item => item.city).filter(Boolean))];
-  
-  // Sort cities (with Seoul first, then alphabetical)
-  cities.sort((a, b) => {
-    if (a === "전체") return -1;
-    if (b === "전체") return 1;
-    if (a === "서울특별시") return -1;
-    if (b === "서울특별시") return 1;
-    return a.localeCompare(b, "ko");
-  });
-
   citySelect.innerHTML = "";
-  cities.forEach(city => {
+  Object.keys(REGION_DATA).forEach(city => {
     const opt = document.createElement("option");
     opt.value = city;
-    opt.textContent = city === "전체" ? "시/도 전체" : city;
+    opt.textContent = city;
     citySelect.appendChild(opt);
   });
-  
   updateDistrictOptions("전체");
 }
 
@@ -202,21 +122,7 @@ function updateDistrictOptions(city) {
   }
   
   districtSelect.disabled = false;
-  
-  // Extract unique districts for the selected city
-  const districts = ["전체", ...new Set(
-    clinicData
-      .filter(item => item.city === city)
-      .map(item => item.district)
-      .filter(Boolean)
-  )];
-  
-  districts.sort((a, b) => {
-    if (a === "전체") return -1;
-    if (b === "전체") return 1;
-    return a.localeCompare(b, "ko");
-  });
-
+  const districts = REGION_DATA[city] || [];
   districts.forEach(dist => {
     const opt = document.createElement("option");
     opt.value = dist;
@@ -227,28 +133,6 @@ function updateDistrictOptions(city) {
 
 function formatNumber(num) {
   return new Intl.NumberFormat().format(num) + "원";
-}
-
-// ==========================================================================
-// Calculator Helpers
-// ==========================================================================
-function resetCalculator() {
-  const defaultSessions = DEFAULT_SESSIONS[currentItem] || 1;
-  calcSessions.value = defaultSessions;
-  calcItemName.textContent = `${ITEM_NAMES[currentItem]} (${defaultSessions}회 기준)`;
-}
-
-function calculateTotalExpenses() {
-  // Get currently displayed average price
-  const avgText = valAverage.textContent.replace(/[^0-9]/g, "");
-  const avgPrice = parseInt(avgText) || 0;
-  
-  const sessions = parseInt(calcSessions.value) || 1;
-  const total = avgPrice * sessions;
-  
-  calcPricePerSession.textContent = formatNumber(avgPrice);
-  calcTotalCost.textContent = formatNumber(total);
-  calcItemName.textContent = `${ITEM_NAMES[currentItem]} (${sessions}회 기준)`;
 }
 
 // ==========================================================================
@@ -289,9 +173,6 @@ function render() {
   resultsCount.textContent = `검색 결과: ${filtered.length}건`;
   listContainer.innerHTML = "";
   
-  // Calculate expenses based on updated filters
-  calculateTotalExpenses();
-
   if (filtered.length === 0) {
     listContainer.innerHTML = `
       <div class="no-results">
@@ -302,17 +183,15 @@ function render() {
     return;
   }
 
-  // Calculate local bounds for progress bars
+  // Calculate local average to determine lowest/highest thresholds
   const prices = filtered.map(x => x.price);
-  const minPrice = Math.min(...prices);
-  const maxPrice = Math.max(...prices);
   const avg = prices.reduce((sum, val) => sum + val, 0) / prices.length;
   
   filtered.forEach(clinic => {
     const card = document.createElement("div");
     card.className = "clinic-card";
     
-    // Status Badge Logic
+    // Status Badge Logic (For Clickbait)
     let badgeClass = "warn";
     let badgeText = "평균 수준";
     
@@ -325,34 +204,15 @@ function render() {
       badgeText = "최고가 주의";
     }
     
-    // Calculate percentage position for relative price bar (0% is minPrice, 100% is maxPrice)
-    const priceSpan = maxPrice - minPrice;
-    const pct = priceSpan > 0 ? ((clinic.price - minPrice) / priceSpan) * 100 : 50;
-    
-    const mapQuery = `${clinic.name} ${clinic.city} ${clinic.district}`;
-    // Both badges are shown because all clinics in data.json are verified and auto-corrected
-    const verifiedBadge = `<span class="verified-tag" title="네이버 지도 실제 등록 확인됨"><i class="fas fa-check-circle"></i> 지도 등록됨</span>`;
-    const hiraVerifiedBadge = `<span class="hira-verified-tag" title="건강보험심사평가원 비급여 공공데이터"><i class="fas fa-check-circle"></i> 심평원 검증됨</span>`;
-
     card.innerHTML = `
       <div class="clinic-info">
-        <a href="https://map.naver.com/v5/search/${encodeURIComponent(mapQuery)}" target="_blank" class="clinic-name-link" title="네이버 지도로 검색">
-          <span class="clinic-name">${clinic.name}${verifiedBadge}${hiraVerifiedBadge} <i class="fas fa-external-link-alt" style="font-size: 11px; margin-left: 4px; opacity: 0.6;"></i></span>
-        </a>
-        <a href="https://map.naver.com/v5/search/${encodeURIComponent(clinic.addr)}" target="_blank" class="clinic-addr-link" title="네이버 지도로 주소 검색">
-          <span class="clinic-addr"><i class="fas fa-map-marker-alt"></i> ${clinic.addr}</span>
-        </a>
+        <span class="clinic-name">${clinic.name}</span>
+        <span class="clinic-addr"><i class="fas fa-map-marker-alt"></i> ${clinic.addr}</span>
         <span class="treatment-name">${clinic.treatment}</span>
       </div>
       <div class="clinic-price-area">
         <span class="price-label">비급여 진료비</span>
         <span class="price-value">${formatNumber(clinic.price)}</span>
-        <div class="price-progress-wrapper">
-          <div class="price-progress-container">
-            <div class="price-progress-bar" style="width: 100%"></div>
-            <div class="price-progress-indicator" style="left: ${pct}%" title="최저 ${formatNumber(minPrice)} ~ 최고 ${formatNumber(maxPrice)} 중 현재 가격 위치"></div>
-          </div>
-        </div>
       </div>
       <div class="clinic-status-area">
         <span class="price-badge ${badgeClass}">

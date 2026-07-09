@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>의료비 절약 가이드 - 메디프라이스 (MediPrice)</title>
+  <link rel="canonical" href="https://mediprice.pages.dev/guides.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    .guide-card {
+      background: var(--color-card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--border-radius-lg);
+      padding: 30px;
+      box-shadow: var(--glass-shadow);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .guide-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px 0 rgba(15, 23, 42, 0.08);
+      border-color: var(--color-secondary);
+    }
+    .guide-badge {
+      display: inline-block;
+      align-self: flex-start;
+      background-color: var(--color-safe-bg);
+      color: var(--color-safe-text);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
+    .guide-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .guide-card p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      flex-grow: 1;
+      line-height: 1.7;
+    }
+    .btn-read {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: var(--transition-smooth);
+    }
+    .btn-read:hover {
+      color: var(--color-primary);
+      gap: 12px;
+    }
+    .btn-back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--color-primary);
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: var(--border-radius-md);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+      margin-top: 20px;
+    }
+    .btn-back-home:hover {
+      background-color: var(--color-secondary);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>🩺 비급여 <span class="highlight">의료비 절약 가이드</span></h1>
+      <p class="header-desc">지혜로운 의료 소비를 돕기 위해 비급여 진료비 분석 정보와 실전 절약 팁을 알기 쉽게 전해드립니다.</p>
+    </header>
+
+    <main>
+      <div class="guides-grid">
+        <!-- Card 0: HIRA Guide -->
+        <div class="guide-card">
+          <span class="guide-badge" style="background-color: var(--color-secondary); color: white;">HIRA / 비급여 기초</span>
+          <h3>HIRA 비급여 진료비 완벽 이해: 가격 편차는 왜 발생할까?</h3>
+          <p>건강보험 미적용 비급여 진료비가 병원마다 최대 3배까지 다른 이유와 HIRA 공공 데이터를 활용한 현명한 의료비 관리법을 알기 쉽게 설명합니다. 메디프라이스의 모든 가격 정보는 HIRA를 기반으로 합니다.</p>
+          <a href="guides/hira-non-reimbursed-guide.html" class="btn-read">가이드 읽기 <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 1 -->
+        <div class="guide-card">
+          <span class="guide-badge">예방접종 / 가다실</span>
+          <h3>가다실 9가 가격 편차 왜 이렇게 심할까? 최저가 접종 핵심 노하우</h3>
+          <p>병원별 자율 책정되는 비급여 예방접종 비용의 숨겨진 원리와 지역사랑상품권, 단체 접종 등을 활용해 최대 30% 저렴하게 맞는 꿀팁을 전해드립니다.</p>
+          <a href="guides/gardasil-9-price-saving-guide.html" class="btn-read">가이드 읽기 <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="guide-card">
+          <span class="guide-badge">대상포진 / 백신</span>
+          <h3>대상포진 백신 싱그릭스 vs 조스타박스 비교: 비용 대비 예방률 분석</h3>
+          <p>2회 접종 시 40~50만 원에 달하는 최신 사백신 '싱그릭스'와 생백신의 효능 차이 및 접종 가격 부담을 줄이는 똑똑한 비교 방법을 공유합니다.</p>
+          <a href="guides/shingles-vaccination-shingrix-guide.html" class="btn-read">가이드 읽기 <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="guide-card">
+          <span class="guide-badge">실비보험 / 도수치료</span>
+          <h3>도수치료 실비 청구 서류 가이드 및 불필요한 과잉진료 판별 꿀팁</h3>
+          <p>도수치료 실손의료보험 청구 시 반려를 예방하기 위한 의사 진단서 필수 문구와 병원별 바가지 요금(평균 초과 단가)을 구별하는 방법을 안내합니다.</p>
+          <a href="guides/manual-therapy-insurance-tips.html" class="btn-read">가이드 읽기 <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-bottom: 50px;">
+        <a href="index.html" class="btn-back-home"><i class="fas fa-arrow-left"></i> 실시간 비급여 조회기로 돌아가기</a>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>🩺 메디프라이스 (MediPrice)</h3>
+          <p>본 서비스는 건강보험심사평가원의 공공 데이터 포털 비급여 진료비용 조회 정보를 기반으로 가공되었습니다.</p>
+        </div>
+        <div class="footer-links">
+          <a href="about.html">서비스 소개</a>
+          <a href="guides.html">의료비 절약 가이드</a>
+          <a href="terms.html">이용약관 및 면책조항</a>
+          <a href="privacy-policy.html">개인정보처리방침</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 메디프라이스. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -6,7 +6,7 @@
 :root {
   --font-primary: 'Inter', 'Noto Sans KR', sans-serif;
   
-  /* Color Palette (Light Mode) */
+  /* Color Palette */
   --color-bg: #f6f8fc;
   --color-card-bg: rgba(255, 255, 255, 0.85);
   --color-text-main: #0f172a;      /* Slate 900 */
@@ -17,7 +17,7 @@
   --color-secondary: #0d9488;      /* Teal */
   --color-accent: #0f766e;
   
-  /* Status Colors */
+  /* Status Colors (The Clickbait Badges) */
   --color-safe-bg: #ecfdf5;        /* Emerald 50 */
   --color-safe-text: #059669;      /* Emerald 600 */
   --color-warn-bg: #fff7ed;        /* Orange 50 */
@@ -30,37 +30,7 @@
   --glass-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.04);
   --border-radius-lg: 20px;
   --border-radius-md: 12px;
-  --border-radius-sm: 8px;
   --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  
-  --progress-bg: #e2e8f0;
-}
-
-/* ==========================================================================
-   Dark Mode Theme Overrides
-   ========================================================================== */
-body.dark-theme {
-  --color-bg: #090d16;
-  --color-card-bg: rgba(17, 24, 39, 0.85);
-  --color-text-main: #f1f5f9;      /* Slate 100 */
-  --color-text-muted: #94a3b8;     /* Slate 400 */
-  --color-text-light: #64748b;     /* Slate 500 */
-  
-  --color-primary: #312e81;        /* Lightened Deep Indigo */
-  --color-secondary: #14b8a6;      /* Brighter Teal */
-  --color-accent: #0d9488;
-  
-  --glass-border: rgba(37, 99, 235, 0.15);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-  
-  --color-safe-bg: rgba(16, 185, 129, 0.1);
-  --color-safe-text: #34d399;
-  --color-warn-bg: rgba(249, 115, 22, 0.1);
-  --color-warn-text: #fb923c;
-  --color-danger-bg: rgba(244, 63, 94, 0.1);
-  --color-danger-text: #fb7185;
-  
-  --progress-bg: #1e293b;
 }
 
 /* ==========================================================================
@@ -82,13 +52,6 @@ body {
     radial-gradient(at 0% 0%, rgba(13, 148, 136, 0.05) 0px, transparent 50%),
     radial-gradient(at 100% 0%, rgba(30, 27, 75, 0.05) 0px, transparent 50%);
   background-attachment: fixed;
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-body.dark-theme {
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(20, 184, 166, 0.03) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(49, 46, 129, 0.05) 0px, transparent 50%);
 }
 
 .container {
@@ -102,55 +65,8 @@ body.dark-theme {
    Header & Brand Section
    ========================================================================== */
 header {
-  padding: 30px 0 20px 0;
-}
-
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-}
-
-.logo {
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--color-primary);
-}
-
-body.dark-theme .logo {
-  color: var(--color-secondary);
-}
-
-.theme-toggle-btn {
-  background: var(--color-card-bg);
-  border: 1px solid var(--glass-border);
-  color: var(--color-text-main);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  box-shadow: var(--glass-shadow);
-  transition: var(--transition-smooth);
-}
-
-.theme-toggle-btn:hover {
-  transform: scale(1.08) rotate(15deg);
-  border-color: var(--color-secondary);
-  color: var(--color-secondary);
-}
-
-.badge-headline-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: 15px auto 0 auto;
-  width: max-content;
+  padding: 40px 0 20px 0;
+  text-align: center;
 }
 
 .badge-headline {
@@ -163,6 +79,7 @@ body.dark-theme .logo {
   font-weight: 600;
   padding: 6px 14px;
   border-radius: 30px;
+  margin-bottom: 16px;
   border: 1px solid rgba(225, 29, 72, 0.15);
   box-shadow: 0 2px 8px rgba(225, 29, 72, 0.05);
 }
@@ -182,17 +99,12 @@ body.dark-theme .logo {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 38px;
   font-weight: 700;
   letter-spacing: -1px;
   color: var(--color-primary);
   line-height: 1.25;
   margin-bottom: 12px;
-  text-align: center;
-}
-
-body.dark-theme h1 {
-  color: #ffffff;
 }
 
 h1 span.highlight {
@@ -204,9 +116,8 @@ h1 span.highlight {
 .header-desc {
   font-size: 16px;
   color: var(--color-text-muted);
-  max-width: 650px;
-  margin: 0 auto 20px auto;
-  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
 }
 
 /* ==========================================================================
@@ -220,8 +131,7 @@ h1 span.highlight {
   box-shadow: var(--glass-shadow);
   border-radius: var(--border-radius-lg);
   padding: 24px;
-  margin-bottom: 24px;
-  transition: background-color 0.4s ease, border-color 0.4s ease;
+  margin-bottom: 30px;
 }
 
 /* Category Tabs */
@@ -241,8 +151,8 @@ h1 span.highlight {
 }
 
 .tab-btn {
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--glass-border);
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: var(--border-radius-md);
   padding: 14px 10px;
   font-family: var(--font-primary);
@@ -255,6 +165,7 @@ h1 span.highlight {
   flex-direction: column;
   align-items: center;
   gap: 6px;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.01);
 }
 
 .tab-btn i {
@@ -265,7 +176,7 @@ h1 span.highlight {
   border-color: var(--color-secondary);
   color: var(--color-secondary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.1);
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.08);
 }
 
 .tab-btn.active {
@@ -274,12 +185,6 @@ h1 span.highlight {
   color: #ffffff;
   font-weight: 600;
   box-shadow: 0 8px 16px rgba(30, 27, 75, 0.15);
-}
-
-body.dark-theme .tab-btn.active {
-  background-color: var(--color-secondary);
-  border-color: var(--color-secondary);
-  color: #0f172a;
 }
 
 /* Filters Grid */
@@ -309,8 +214,8 @@ body.dark-theme .tab-btn.active {
 
 .select-custom, .input-custom {
   width: 100%;
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--glass-border);
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
   border-radius: var(--border-radius-md);
   padding: 12px 16px;
   font-family: var(--font-primary);
@@ -325,11 +230,6 @@ body.dark-theme .tab-btn.active {
   box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
 }
 
-.select-custom:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
 /* ==========================================================================
    Dashboard Metrics (Summary Bar)
    ========================================================================== */
@@ -337,7 +237,7 @@ body.dark-theme .tab-btn.active {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 768px) {
@@ -347,7 +247,7 @@ body.dark-theme .tab-btn.active {
 }
 
 .summary-card {
-  background: var(--color-card-bg);
+  background: #ffffff;
   border: 1px solid var(--glass-border);
   border-radius: var(--border-radius-md);
   padding: 16px 20px;
@@ -355,7 +255,6 @@ body.dark-theme .tab-btn.active {
   align-items: center;
   gap: 16px;
   box-shadow: var(--glass-shadow);
-  transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 .summary-icon {
@@ -374,7 +273,7 @@ body.dark-theme .tab-btn.active {
 }
 
 .summary-icon.average {
-  background-color: rgba(148, 163, 184, 0.1);
+  background-color: #f1f5f9;
   color: var(--color-text-muted);
 }
 
@@ -398,184 +297,6 @@ body.dark-theme .tab-btn.active {
   font-size: 18px;
   font-weight: 700;
   color: var(--color-text-main);
-}
-
-/* ==========================================================================
-   Calculator Card
-   ========================================================================== */
-.calculator-card {
-  background: var(--color-card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-  border-radius: var(--border-radius-lg);
-  padding: 24px;
-  margin-bottom: 24px;
-  transition: background-color 0.4s ease, border-color 0.4s ease;
-}
-
-.calc-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.calc-header h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-body.dark-theme .calc-header h3 {
-  color: #ffffff;
-}
-
-.calc-badge {
-  background-color: var(--color-safe-bg);
-  color: var(--color-safe-text);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 20px;
-}
-
-.calc-desc {
-  font-size: 13px;
-  color: var(--color-text-muted);
-  margin-bottom: 20px;
-}
-
-.calc-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 2fr;
-  gap: 24px;
-  align-items: center;
-}
-
-@media (max-width: 768px) {
-  .calc-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
-.calc-input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.calc-input-group label {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-text-muted);
-}
-
-.sessions-control {
-  display: flex;
-  align-items: center;
-  background-color: var(--color-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--border-radius-md);
-  padding: 4px;
-  width: max-content;
-}
-
-.session-btn {
-  background: transparent;
-  border: none;
-  color: var(--color-text-main);
-  width: 36px;
-  height: 36px;
-  border-radius: var(--border-radius-sm);
-  cursor: pointer;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition-smooth);
-}
-
-.session-btn:hover {
-  background-color: var(--color-card-bg);
-  color: var(--color-secondary);
-}
-
-.input-sessions {
-  border: none;
-  background: transparent;
-  width: 50px;
-  text-align: center;
-  font-family: var(--font-primary);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--color-text-main);
-  outline: none;
-}
-
-/* Remove arrows for inputs number */
-.input-sessions::-webkit-outer-spin-button,
-.input-sessions::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.calc-result-group {
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--color-bg);
-  border-radius: var(--border-radius-md);
-  padding: 16px;
-  border: 1px solid var(--glass-border);
-  gap: 16px;
-}
-
-@media (max-width: 480px) {
-  .calc-result-group {
-    flex-direction: column;
-  }
-}
-
-.calc-result-item {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.calc-result-item .result-label {
-  font-size: 11px;
-  color: var(--color-text-muted);
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-
-.calc-result-item .result-value {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--color-text-main);
-}
-
-.calc-result-item.total {
-  border-left: 1px solid var(--glass-border);
-  padding-left: 16px;
-}
-
-@media (max-width: 480px) {
-  .calc-result-item.total {
-    border-left: none;
-    border-top: 1px solid var(--glass-border);
-    padding-left: 0;
-    padding-top: 12px;
-  }
-}
-
-.calc-result-item.total .result-value {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--color-secondary);
-  text-shadow: 0 0 10px rgba(13, 148, 136, 0.05);
 }
 
 /* ==========================================================================
@@ -620,7 +341,7 @@ body.dark-theme .calc-header h3 {
   border-radius: var(--border-radius-md);
   padding: 20px;
   display: grid;
-  grid-template-columns: 2.2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   align-items: center;
   gap: 20px;
   transition: var(--transition-smooth);
@@ -633,33 +354,10 @@ body.dark-theme .calc-header h3 {
   box-shadow: 0 8px 24px rgba(13, 148, 136, 0.06);
 }
 
-@media (max-width: 900px) {
-  .clinic-card {
-    grid-template-columns: 1.5fr 1fr;
-    gap: 16px;
-  }
-  .clinic-status-area {
-    grid-column: 1 / span 2;
-    justify-content: flex-start !important;
-    border-top: 1px dashed var(--glass-border);
-    padding-top: 12px;
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .clinic-card {
     grid-template-columns: 1fr;
     gap: 12px;
-  }
-  .clinic-price-area {
-    align-items: flex-start !important;
-    border-top: 1px solid var(--glass-border);
-    padding-top: 10px;
-  }
-  .clinic-status-area {
-    grid-column: 1;
-    border-top: none;
-    padding-top: 0;
   }
 }
 
@@ -669,52 +367,10 @@ body.dark-theme .calc-header h3 {
   gap: 4px;
 }
 
-.clinic-name-link, .clinic-addr-link {
-  text-decoration: none;
-  width: fit-content;
-  display: block;
-}
-
-.clinic-name-link:hover .clinic-name {
-  color: var(--color-secondary);
-  text-decoration: underline;
-}
-
-.clinic-addr-link:hover .clinic-addr {
-  color: var(--color-text-main);
-  text-decoration: underline;
-}
-
-.verified-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  background-color: #ecfdf5; /* Emerald 50 / Light green */
-  color: #059669;            /* Emerald 600 */
-  font-size: 11px;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 20px;
-  margin-left: 8px;
-  border: 1px solid rgba(5, 150, 105, 0.15);
-  vertical-align: middle;
-  transition: var(--transition-smooth);
-}
-
-body.dark-theme .verified-tag {
-  background-color: rgba(16, 185, 129, 0.15);
-  color: #34d399;
-  border-color: rgba(52, 211, 153, 0.15);
-}
-
 .clinic-name {
   font-size: 18px;
   font-weight: 700;
   color: var(--color-primary);
-}
-
-body.dark-theme .clinic-name {
-  color: #ffffff;
 }
 
 .clinic-addr {
@@ -732,8 +388,7 @@ body.dark-theme .clinic-name {
 .treatment-name {
   font-size: 14px;
   font-weight: 500;
-  background-color: var(--progress-bg);
-  color: var(--color-text-muted);
+  background-color: #f1f5f9;
   padding: 4px 10px;
   border-radius: 6px;
   width: fit-content;
@@ -745,8 +400,14 @@ body.dark-theme .clinic-name {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  gap: 6px;
-  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .clinic-price-area {
+    align-items: flex-start;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 10px;
+  }
 }
 
 .price-label {
@@ -761,49 +422,16 @@ body.dark-theme .clinic-name {
   color: var(--color-text-main);
 }
 
-/* Relative Price Progress Bar */
-.price-progress-wrapper {
-  width: 100%;
-  margin-top: 4px;
-}
-
-.price-progress-container {
-  width: 100%;
-  height: 6px;
-  background-color: var(--progress-bg);
-  border-radius: 3px;
-  position: relative;
-  overflow: visible;
-}
-
-.price-progress-bar {
-  height: 100%;
-  border-radius: 3px;
-  background: linear-gradient(90deg, var(--color-safe-text), var(--color-warn-text), var(--color-danger-text));
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.price-progress-indicator {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  border: 2px solid var(--color-text-main);
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  transition: left 0.3s ease;
-}
-
 /* Badge System */
 .clinic-status-area {
   display: flex;
   justify-content: flex-end;
-  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .clinic-status-area {
+    justify-content: flex-start;
+  }
 }
 
 .price-badge {
@@ -838,9 +466,9 @@ body.dark-theme .clinic-name {
 .no-results {
   text-align: center;
   padding: 60px 20px;
-  background-color: var(--color-card-bg);
+  background-color: #ffffff;
   border-radius: var(--border-radius-md);
-  border: 1px dashed var(--glass-border);
+  border: 1px dashed #cbd5e1;
 }
 
 .no-results i {
@@ -858,16 +486,11 @@ body.dark-theme .clinic-name {
    Footer Section & Legal Links
    ========================================================================== */
 footer {
-  background-color: #0f172a;
-  color: rgba(255, 255, 255, 0.6);
+  background-color: var(--color-primary);
+  color: rgba(255, 255, 255, 0.7);
   padding: 40px 0;
   margin-top: 60px;
   border-top: 4px solid var(--color-secondary);
-}
-
-body.dark-theme footer {
-  background-color: #020617;
-  border-top-color: var(--color-accent);
 }
 
 .footer-content {
@@ -920,97 +543,3 @@ body.dark-theme footer {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.4);
 }
-
-/* ==========================================================================
-   HIRA Integration Badges & Buttons
-   ========================================================================== */
-.hira-verified-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  background-color: #f0fdfa; /* Teal 50 */
-  color: #0d9488;            /* Teal 600 */
-  font-size: 11px;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 20px;
-  margin-left: 6px;
-  border: 1px solid rgba(13, 148, 136, 0.15);
-  vertical-align: middle;
-}
-
-body.dark-theme .hira-verified-tag {
-  background-color: rgba(20, 184, 166, 0.15);
-  color: #14b8a6;
-  border-color: rgba(20, 184, 166, 0.15);
-}
-
-.hira-link-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: 30px;
-  font-size: 12px;
-  font-weight: 600;
-  background: rgba(15, 118, 110, 0.08); /* Accent transparent */
-  color: var(--color-accent);
-  border: 1px solid rgba(15, 118, 110, 0.2);
-  text-decoration: none;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  margin-left: 8px;
-}
-
-.hira-link-btn:hover {
-  background: var(--color-accent);
-  color: #ffffff !important;
-  border-color: var(--color-accent);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
-}
-
-body.dark-theme .hira-link-btn {
-  background: rgba(20, 184, 166, 0.08);
-  color: #14b8a6;
-  border-color: rgba(20, 184, 166, 0.2);
-}
-
-body.dark-theme .hira-link-btn:hover {
-  background: #14b8a6;
-  color: #0f172a !important;
-  border-color: #14b8a6;
-}
-
-.hira-banner {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(13, 148, 136, 0.06);
-  border: 1px solid rgba(13, 148, 136, 0.15);
-  color: var(--color-accent);
-  padding: 10px 16px;
-  border-radius: var(--border-radius-md);
-  font-size: 13px;
-  line-height: 1.5;
-  margin-top: 16px;
-  text-align: left;
-}
-
-body.dark-theme .hira-banner {
-  background: rgba(20, 184, 166, 0.06);
-  border-color: rgba(20, 184, 166, 0.15);
-  color: #14b8a6;
-}
-
-.hira-banner i {
-  font-size: 15px;
-  flex-shrink: 0;
-  color: inherit;
-}
-
-.hira-banner strong {
-  font-weight: 700;
-}
-
-
