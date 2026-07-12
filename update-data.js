@@ -85,8 +85,16 @@ async function updateData() {
 
       itemList.forEach(apiItem => {
         const clinicName = apiItem.yadmNm;
-        const city = apiItem.sidoCdNm;
-        const district = apiItem.sgguCdNm;
+        const district = apiItem.sgguCdNm || "전체";
+        let city = apiItem.sidoCdNm;
+        if (city === "전남광주") {
+          if (district.startsWith("광주")) {
+            city = "광주";
+          } else {
+            city = "전남";
+          }
+        }
+        if (city === "세종시") city = "세종";
         const addr = apiItem.addr || `${city} ${district}`;
         const price = parseInt(apiItem.minPrc || apiItem.minDamt || apiItem.maxPrc || apiItem.maxDamt || apiItem.curAmt || 0, 10);
 
