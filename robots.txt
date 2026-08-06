@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mediprice.pages.dev/sitemap.xml
