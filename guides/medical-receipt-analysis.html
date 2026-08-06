@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>병원 영수증 속 '급여'와 '비급여' 차이점 완벽 분석 (의료비 폭리 방지 요령) - 메디프라이스</title>
+  <link rel="canonical" href="https://mediprice.pages.dev/guides/medical-receipt-analysis.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .article-card {
+      background: var(--color-card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      margin: 30px 0;
+      box-shadow: var(--glass-shadow);
+    }
+    .article-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+    .article-meta {
+      font-size: 13px;
+      color: var(--color-text-light);
+      margin-bottom: 25px;
+      border-bottom: 1px solid var(--glass-border);
+      padding-bottom: 15px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    .article-content h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-top: 35px;
+      margin-bottom: 15px;
+      border-left: 4px solid var(--color-secondary);
+      padding-left: 12px;
+    }
+    .article-content h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+    .article-content p {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+      line-height: 1.8;
+      text-align: justify;
+    }
+    .article-content ul, .article-content ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+      color: var(--color-text-muted);
+    }
+    .article-content li {
+      margin-bottom: 8px;
+      font-size: 14.5px;
+      line-height: 1.7;
+    }
+    .info-box {
+      border-left: 4px solid var(--color-warn-text);
+      background-color: var(--color-warn-bg);
+      color: var(--color-warn-text);
+      padding: 15px 20px;
+      border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+      margin: 25px 0;
+      font-size: 14px;
+    }
+    .info-box strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 15px;
+    }
+    .btn-back-list {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--color-primary);
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: var(--border-radius-md);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+      margin-top: 30px;
+    }
+    .btn-back-list:hover {
+      background-color: var(--color-secondary);
+      transform: translateY(-2px);
+    }
+  </style>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021174212794541"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>🩺 비급여 <span class="highlight">의료비 절약 가이드</span></h1>
+    </header>
+
+    <main>
+      <article class="article-card">
+        <h1 class="article-title">병원 영수증 속 '급여'와 '비급여' 차이점 완벽 분석 (의료비 폭리 방지 요령)</h1>
+        <div class="article-meta">
+          <span><i class="far fa-calendar-alt"></i> 2026-08-06</span>
+          <span><i class="far fa-user"></i> 메디프라이스 자문단</span>
+          <span><i class="far fa-bookmark"></i> 병원 영수증 / 비급여 정보</span>
+        </div>
+
+        <div class="article-content">
+          <p>몸이 아파서 병원에 다녀온 뒤 수납 창구에서 영수증을 받아보면 수만 원에서 수십만 원에 달하는 비용 명세가 다소 복잡하게 적혀 있습니다. 대다수 환자들은 그저 병원 측에서 산정해 준 총액만 확인하고 서둘러 카드를 내밀기 일쑤입니다. 하지만 영수증 안의 세부 항목인 **'급여'**와 **'비급여'**의 구조를 정확하게 볼 줄 알면 병원비 청구가 올바른지, 혹시 과도한 과잉 진료나 바가지는 없었는지 스스로 검증할 수 있습니다. 이번 글에서는 병원 영수증을 똑똑하게 판독하고 불필요한 의료비 낭비를 예방하는 법을 알아보겠습니다.</p>
+
+          <h2>1. 급여 vs 비급여의 본질적 개념 정리</h2>
+          <p>대한민국 건강보험 혜택이 적용되는지 여부에 따라 크게 두 줄기로 갈라집니다.</p>
+
+          <h3>급여 (건강보험 적용 항목)</h3>
+          <p>질병의 치료 목적이 뚜렷하며, 보건복지부 고시에 의해 건강보험 재정에서 일정 비율 비용을 지원해 주는 항목입니다. 급여 항목은 다시 두 가지로 쪼개집니다.</p>
+          <ul>
+            <li><strong>일반 본인부담금</strong>: 정부 지원금(공단부담금)을 제외하고 환자 본인이 내야 하는 20~50% 수준의 정당 비용입니다.</li>
+            <li><strong>전액 본인부담금</strong>: 건강보험 혜택 대상 항목이지만 특정한 투약 기준(횟수나 나이 제한 등)을 초과하여 일단 환자가 전액 치료비를 지출해야 하는 경우입니다. (이후 조건 충족 시 환급 가능)</li>
+          </ul>
+
+          <h3>비급여 (건강보험 미적용 항목)</h3>
+          <p>미용 목적의 수술, 영양제 주사, 일부 최신 암 치료 등 건강보험 재정으로 지원하지 않는 항목입니다. **가장 큰 특징은 가격 책정 권한이 100% 병원에 있다는 점**입니다. 동일한 비타민 수액이나 도수치료라도 A 병원에서는 5만 원, B 병원에서는 20만 원을 불러도 현행법상 제재할 방법이 없습니다.</p>
+
+          <h2>2. 병원 영수증에서 확인해야 할 핵심 영역 3가지</h2>
+          <p>진료비 영수증을 받으면 왼쪽 상단부터 아래로 내려가며 세 개의 영역을 집중적으로 살펴보아야 합니다.</p>
+
+          <h3>영역 ①: 급여 내역 (공단부담금 확인)</h3>
+          <p>내가 낸 돈 외에 국민건강보험공단이 얼마를 병원에 대신 지불해 줬는지 파악합니다. 공단부담금 비중이 높을수록 내가 낸 치료비가 합리적이라는 뜻입니다.</p>
+
+          <h3>영역 ②: 선택 진료료 및 비급여 내역</h3>
+          <p>환자들이 느끼는 '병원비 폭탄'의 주범은 전부 여기에 기재되어 있습니다. 영양수액, 도수치료, 비급여 예방접종(가다실, 싱그릭스 등), DNA 주사 등이 포함됩니다. 비급여 총액이 급여 본인부담금보다 과도하게 많다면 진료 시 의사가 권유했던 비급여 항목을 되짚어 볼 필요가 있습니다.</p>
+
+          <h3>영역 ③: 환자 부담 총액과 수납액</h3>
+          <p>최종 결제해야 하는 금액입니다. 실손의료보험 청구를 계획하고 계신다면, '비급여' 항목의 합계액과 환자부담 총액이 정확하게 보험금 청구 요건에 부합하는지 눈여겨보아야 합니다.</p>
+
+          <div class="info-box">
+            <strong>⚠️ '진료비 세부내역서'를 반드시 요구하세요!</strong>
+            진료비 영수증은 대략적인 합산 카테고리만 표기하므로 정확히 어떤 주사제와 처치가 적용되었는지 알기 어렵습니다. 수납 창구에 **"진료비 세부내역서 1부 같이 떼어 주세요"**라고 말하면 각 약품과 처치별 단가와 수량이 명시된 상세 서류를 무료로 발급받을 수 있습니다.
+          </div>
+
+          <h2>3. 과잉 진료 및 비급여 폭리 방지 대책</h2>
+          <p>일부 병의원에서는 실손보험 가입 여부를 묻고 고액의 비급여 처치(수액 패키지, 도수치료 장기 결제 등)를 은근히 패키지로 권유하곤 합니다. 의료 소비자가 스스로 주관을 가지고 대처할 수 있는 실천 팁 3가지입니다.</p>
+          <ol>
+            <li><strong>진료 전 비급여 항목에 대해 물어보기</strong>: 주사나 검사를 처방하기 전에 의사에게 "이게 건강보험이 되는 급여 항목인가요? 비급여라면 비용은 얼마인가요?"라고 질문하는 것만으로도 과도한 처방을 사전 차단할 수 있습니다.</li>
+            <li><strong>사전 고지제도 확인하기</strong>: 의료법상 병원은 비급여 진료비를 원내 접수처 부근에 가격표로 의무 고시해 놓아야 합니다. 가격 고시 의무를 위반했거나 가격표가 없는 병원은 신뢰성을 의심해 보아야 합니다.</li>
+            <li><strong>메디프라이스를 통한 사전 시세 비교</strong>: 가다실 백신 접종이나 도수치료처럼 미리 예정된 치료는 가기 전에 메디프라이스 검색기를 통해 주변 병원들의 평균 단가를 미리 비교해 보세요. 평균가보다 1.5배 이상 비싼 곳은 다른 의원으로 발길을 돌리는 것이 비용을 아끼는 현명한 선택입니다.</li>
+          </ol>
+
+          <p>진료비 영수증은 단순한 결제 영수증이 아닌 나를 지키는 의료 권리 증서입니다. 수납 시 세부 항목을 꼭 눈으로 한 번 훑어보시는 작은 습관을 길러보시기 바랍니다.</p>
+        </div>
+
+        <div style="text-align: center;">
+          <a href="../guides.html" class="btn-back-list"><i class="fas fa-list"></i> 가이드 목록으로 돌아가기</a>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>🩺 메디프라이스 (MediPrice)</h3>
+          <p>본 서비스는 건강보험심사평가원의 공공 데이터 포털 비급여 진료비용 조회 정보를 기반으로 가공되었습니다.</p>
+        </div>
+        <div class="footer-links">
+          <a href="../about.html">서비스 소개</a>
+          <a href="../guides.html">의료비 절약 가이드</a>
+          <a href="../terms.html">이용약관 및 면책조항</a>
+          <a href="../privacy-policy.html">개인정보처리방침</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 메디프라이스. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
