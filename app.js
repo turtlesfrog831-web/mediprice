@@ -101,6 +101,23 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
     });
+
+  // Fetch last-updated date metadata
+  fetch('last-updated.json')
+    .then(res => res.json())
+    .then(meta => {
+      const dateEl = document.getElementById("lastUpdatedDate");
+      if (dateEl && meta.lastUpdated) {
+        dateEl.textContent = meta.lastUpdated;
+      }
+    })
+    .catch(() => {
+      const dateEl = document.getElementById("lastUpdatedDate");
+      if (dateEl) {
+        // Fallback message if last-updated.json is not found
+        dateEl.textContent = "최근 일요일 업데이트 완료";
+      }
+    });
   
   // Category tabs
   tabButtons.forEach(btn => {

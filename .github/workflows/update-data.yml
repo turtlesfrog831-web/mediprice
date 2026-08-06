@@ -30,11 +30,11 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add data.json
-        # Only commit and push if data.json actually changed
+        git add data.json last-updated.json
+        # Only commit and push if data.json or last-updated.json actually changed
         if git diff --quiet && git diff --staged --quiet; then
           echo "No changes in HIRA data. Skipping push."
         else
-          git commit -m "Auto-update: Weekly HIRA non-reimbursed hospital prices"
+          git commit -m "Auto-update: Weekly HIRA non-reimbursed hospital prices and timestamp"
           git push
         fi

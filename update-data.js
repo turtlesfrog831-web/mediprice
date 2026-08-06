@@ -153,8 +153,35 @@ async function updateData() {
 
   if (updatedData.length > 0) {
     const outputPath = path.join(__dirname, 'data.json');
-    fs.writeFileSync(outputPath, JSON.stringify(updatedData, null, 2), 'utf-8');
-    console.log(`🎉 업데이트 성공! 총 ${updatedData.length}개의 최신 비급여 병원 데이터가 ${outputPath} 에 저장되었습니다.`);
+    let hasChanged = true;
+    
+    if (fs.existsSync(outputPath)) {
+      try {
+        const existingRaw = fs.readFileSync(outputPath, 'utf-8');
+        const existingData = JSON.parse(existingRaw);
+        if (JSON.stringify(updatedData) === JSON.stringify(existingData)) {
+          hasChanged = false;
+        }
+      } catch (e) {
+        // Parsing error, overwrite
+      }
+    }
+    
+    if (hasChanged) {
+      fs.writeFileSync(outputPath, JSON.stringify(updatedData, null, 2), 'utf-8');
+      
+      // Write last updated date in KST (UTC+9)
+      const dateObj = new Date();
+      const kstOffset = 9 * 60 * 60 * 1000;
+      const kstDate = new Date(dateObj.getTime() + kstOffset);
+      const dateStr = kstDate.toISOString().split('T')[0];
+      const updateInfo = { lastUpdated: dateStr };
+      fs.writeFileSync(path.join(__dirname, 'last-updated.json'), JSON.stringify(updateInfo, null, 2), 'utf-8');
+      
+      console.log(`🎉 업데이트 성공! 데이터가 변경되어 총 ${updatedData.length}개의 최신 비급여 병원 데이터와 last-updated.json이 업데이트되었습니다.`);
+    } else {
+      console.log("ℹ️ HIRA API 데이터가 이전 데이터와 동일합니다. 파일 쓰기를 건너뜁니다.");
+    }
   } else {
     console.error("❌ 오류: 업데이트할 새로운 데이터가 없어 작업을 중단합니다.");
   }
