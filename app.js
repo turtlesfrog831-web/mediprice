@@ -293,8 +293,12 @@ function render() {
           <i class="fas ${badgeClass === 'safe' ? 'fa-check-circle' : badgeClass === 'danger' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
           ${badgeText}
         </span>
+        <button class="share-card-btn" onclick="shareClinic('${clinic.name.replace(/'/g, "\\'")}', '${clinic.treatment.replace(/'/g, "\\'")}', ${clinic.price})">
+          <i class="fas fa-share-alt"></i> 공유하기
+        </button>
       </div>
     `;
+
     listContainer.appendChild(card);
   });
 }
@@ -349,3 +353,24 @@ function injectFaqSchema() {
   script.text = JSON.stringify(schema);
   document.head.appendChild(script);
 }
+
+function shareClinic(name, treatment, price) {
+  const shareText = `[메디프라이스] 비급여 진료비 비교 정보!\n🏥 병원: ${name}\n🩺 항목: ${treatment}\n💵 가격: ${new Intl.NumberFormat().format(price)}원\n\n우리 동네 비급여 최저가 병원 찾기: https://mediprice.pages.dev`;
+  
+  if (navigator.share) {
+    navigator.share({
+      title: '메디프라이스 비급여 가격 정보',
+      text: shareText,
+      url: 'https://mediprice.pages.dev'
+    }).catch(err => console.log(err));
+  } else {
+    // Fallback: Copy to clipboard
+    navigator.clipboard.writeText(shareText).then(() => {
+      alert("병원 가격 정보가 클립보드에 복사되었습니다! 카카오톡 등 원하는 곳에 붙여넣어 공유해 보세요.");
+    }).catch(err => {
+      console.error("복사 실패:", err);
+    });
+  }
+}
+
+window.shareClinic = shareClinic;
