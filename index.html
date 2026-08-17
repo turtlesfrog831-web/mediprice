@@ -132,8 +132,76 @@
       </div>
 
       <div class="list-container" id="listContainer">
-        <!-- Clinic cards will be dynamically loaded here by app.js -->
+        <!-- Static Fallback Clinic Cards for SEO & AdSense Crawler (Will be dynamically overwritten by app.js) -->
+        <div class="clinic-card">
+          <div class="clinic-info">
+            <span class="clinic-name">가톨릭대학교 여의도성모병원</span>
+            <span class="clinic-addr"><i class="fas fa-map-marker-alt"></i> 서울 영등포구</span>
+            <span class="treatment-name">자궁경부암 예방접종 (가다실 9가)</span>
+          </div>
+          <div class="clinic-price-area">
+            <span class="price-label">비급여 진료비</span>
+            <span class="price-value">230,000원</span>
+          </div>
+          <div class="clinic-status-area">
+            <span class="price-badge safe"><i class="fas fa-check-circle"></i> 최저가 안심</span>
+            <button class="share-card-btn" onclick="shareClinic('가톨릭대학교 여의도성모병원', '자궁경부암 예방접종 (가다실 9가)', 230000)"><i class="fas fa-share-alt"></i> 공유하기</button>
+          </div>
+        </div>
+        <div class="clinic-card">
+          <div class="clinic-info">
+            <span class="clinic-name">삼성서울병원</span>
+            <span class="clinic-addr"><i class="fas fa-map-marker-alt"></i> 서울 강남구</span>
+            <span class="treatment-name">대상포진 예방접종 (싱그릭스 1회)</span>
+          </div>
+          <div class="clinic-price-area">
+            <span class="price-label">비급여 진료비</span>
+            <span class="price-value">250,000원</span>
+          </div>
+          <div class="clinic-status-area">
+            <span class="price-badge warn"><i class="fas fa-info-circle"></i> 평균 수준</span>
+            <button class="share-card-btn" onclick="shareClinic('삼성서울병원', '대상포진 예방접종 (싱그릭스 1회)', 250000)"><i class="fas fa-share-alt"></i> 공유하기</button>
+          </div>
+        </div>
+        <div class="clinic-card">
+          <div class="clinic-info">
+            <span class="clinic-name">서울대학교병원</span>
+            <span class="clinic-addr"><i class="fas fa-map-marker-alt"></i> 서울 종로구</span>
+            <span class="treatment-name">도수치료 (1회, 60분)</span>
+          </div>
+          <div class="clinic-price-area">
+            <span class="price-label">비급여 진료비</span>
+            <span class="price-value">80,000원</span>
+          </div>
+          <div class="clinic-status-area">
+            <span class="price-badge warn"><i class="fas fa-info-circle"></i> 평균 수준</span>
+            <button class="share-card-btn" onclick="shareClinic('서울대학교병원', '도수치료 (1회, 60분)', 80000)"><i class="fas fa-share-alt"></i> 공유하기</button>
+          </div>
+        </div>
       </div>
+
+      <!-- Informational FAQ Section for User Value & AdSense SEO -->
+      <section class="seo-faq-section">
+        <h2><i class="fas fa-info-circle" style="color: var(--color-secondary);"></i> 비급여 의료비 자주 묻는 질문 (FAQ)</h2>
+        <div class="seo-faq-grid">
+          <div class="seo-faq-item">
+            <h4>Q. 비급여 진료비란 무엇이며 왜 병원마다 다른가요?</h4>
+            <p>비급여 진료는 건강보험 혜택이 적용되지 않아 환자가 비용 전체를 부담하는 항목입니다. 보건복지부 규정에 따라 의료기관의 장이 장비 도입비, 인건비, 서비스 수준을 반영해 금액을 자율 책정하므로 가다실 9가나 싱그릭스 등 동일 백신도 의료기관별 가격 차이가 심하게 발생할 수 있습니다.</p>
+          </div>
+          <div class="seo-faq-item">
+            <h4>Q. 가격 안심 등급(최저가 안심, 최고가 주의)은 어떻게 결정되나요?</h4>
+            <p>메디프라이스는 전국 4,800여 개 병원 비급여 비용의 통계를 분석하여, 해당 품목 및 선택 지역의 평균 단가 대비 약 15% 이상 저렴한 의원은 '최저가 안심', 15% 이상 높은 의원은 '최고가 주의' 배지를 부여하여 합리적인 선택을 돕습니다.</p>
+          </div>
+          <div class="seo-faq-item">
+            <h4>Q. 도수치료 및 예방접종도 실비(실손) 보험 청구가 가능한가요?</h4>
+            <p>도수치료나 MRI 촬영 등 치료 목적의 비급여 항목은 가입하신 실손보험 조건에 따라 실비 청구가 가능합니다. 다만 예방 목적의 가다실 접종이나 영양 주사(마늘주사) 등은 청구가 불가능할 수 있으므로, 방문 전 의료비 가이드 게시판을 꼭 확인하시거나 가입하신 보험사에 사전 확인이 필요합니다.</p>
+          </div>
+          <div class="seo-faq-item">
+            <h4>Q. 메디프라이스 정보는 신뢰할 수 있나요?</h4>
+            <p>메디프라이스는 건강보험심사평가원(HIRA)의 공공 데이터를 분석 및 연동하여 실시간에 가깝게 가공하여 가격을 안내합니다. 다만 병원 내 자체 이벤트나 가격 변동이 실시간 반영되지 않을 수 있으므로 방문 전 의료기관에 가격을 최종 재확인하시는 것을 추천합니다.</p>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 
