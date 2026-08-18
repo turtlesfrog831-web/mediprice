@@ -81,7 +81,6 @@ const valHighest = document.getElementById("valHighest");
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
   initRegions();
-  injectFaqSchema();
   
   // Fetch dynamic data.json
   fetch('data.json')
@@ -321,38 +320,7 @@ function calculateSummary(data) {
   valHighest.textContent = formatNumber(highest);
 }
 
-// ==========================================================================
-// SEO JSON-LD FAQ Schema Auto-Injection
-// ==========================================================================
-function injectFaqSchema() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "병원마다 비급여 가다실9가나 예방접종 주사 가격 차이가 왜 이렇게 큰가요?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "가다실 9가, 대상포진 예방접종(싱그릭스), 도수치료 등은 건강보험이 적용되지 않는 '비급여' 진료 항목에 속합니다. 비급여 항목은 보건복지부 규정에 따라 병원의 시설, 전문의 인건비, 서비스 수준에 맞게 병원장이 자율적으로 진료비를 책정할 수 있어 병원별 가격 편차가 최대 2배에서 3배까지 발생할 수 있습니다."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "비급여 진료비 바가지를 예방하려면 어떻게 해야 하나요?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "예방접종이나 비급여 치료를 받기 전에 메디프라이스(MediPrice) 및 건강보험심사평가원(심평원)의 공공 데이터를 활용하여 거주하시는 지역의 평균 단가 및 의원별 최고가/최저가 가격을 미리 검색하고 가격 안심 등급을 체크한 뒤 병원에 문의하시는 것이 안전합니다."
-        }
-      }
-    ]
-  };
 
-  const script = document.createElement("script");
-  script.type = "application/ld+json";
-  script.text = JSON.stringify(schema);
-  document.head.appendChild(script);
-}
 
 function shareClinic(name, treatment, price) {
   const shareText = `[메디프라이스] 비급여 진료비 비교 정보!\n🏥 병원: ${name}\n🩺 항목: ${treatment}\n💵 가격: ${new Intl.NumberFormat().format(price)}원\n\n우리 동네 비급여 최저가 병원 찾기: https://mediprice.pages.dev`;
