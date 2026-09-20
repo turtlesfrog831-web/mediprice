@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>메디프라이스 - 전국 병원 비급여 가격비교 및 바가지(폭리) 안심 조회기</title>
-  <meta name="description" content="전국 병원 비급여 가격비교 서비스. 가다실9가, 대상포진, 도수치료, 마늘주사 등 병원별 최저가 및 최고가 안심 등급 실시간 조회.">
+  <title>메디프라이스 - 전국 병원 비급여 가격비교 및 안심 조회기</title>
+  <meta name="description" content="전국 병원 비급여 가격비교 서비스. 가다실9가, 대상포진, 도수치료, 마늘주사 등 병원별 최저가·최고가 및 평균 대비 가격 수준 조회.">
   <link rel="canonical" href="https://mediprice.pages.dev">
   <meta name="naver-site-verification" content="d4d6c00b3582c23e4a990f0f02d61dc9a9c7eb8e" />
   <meta name="google-site-verification" content="7cTh7WzOweSXcR61l2auLlmvZ-EIu2K7gVFv3WLuPh0" />
@@ -12,7 +12,7 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mediprice.pages.dev">
-  <meta property="og:title" content="메디프라이스 - 우리 동네 병원 비급여 '눈탱이' 방지 조회기">
+  <meta property="og:title" content="메디프라이스 - 우리 동네 병원 비급여 가격 비교 조회기">
   <meta property="og:description" content="병원마다 다른 비급여 예방접종 및 치료 비용, 평균 단가 비교로 합리적인 선택을 도와드립니다.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80">
   
@@ -36,7 +36,7 @@
       },
       {
         "@type": "Question",
-        "name": "비급여 진료비 바가지를 예방하려면 어떻게 해야 하나요?",
+        "name": "비급여 진료비를 합리적으로 비교하려면 어떻게 해야 하나요?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "예방접종이나 비급여 치료를 받기 전에 메디프라이스(MediPrice) 및 건강보험심사평가원(심평원)의 공공 데이터를 활용하여 거주하시는 지역의 평균 단가 및 의원별 최고가/최저가 가격을 미리 검색하고 가격 안심 등급을 체크한 뒤 병원에 문의하시는 것이 안전합니다."
@@ -55,14 +55,14 @@
   <!-- Top Alert Bar -->
   <div class="badge-headline" style="display: flex; justify-content: center; margin: 15px auto; width: max-content;">
     <span class="blink"></span>
-    <strong>실시간 비급여 경보:</strong> 동일 백신/치료비 최대 3.2배 편차 감지됨
+    <strong>가격 편차 안내:</strong> <span id="spreadNotice">병원마다 비급여 가격 차이가 큽니다</span>
   </div>
 
   <div class="container">
     <!-- Header -->
     <header>
       <h1>🩺 우리 동네 병원 <span class="highlight">비급여 가격 비교기</span></h1>
-      <p class="header-desc">건강보험 미적용으로 병원 자율 책정되는 비급여 예방접종 및 치료 비용을 실시간 분석하여 최저가와 최고가 안심 구간을 안내합니다.</p>
+      <p class="header-desc">건강보험 미적용으로 병원 자율 책정되는 비급여 예방접종 및 치료 비용을 정기 갱신 데이터로 분석하여 최저가와 최고가 안심 구간을 안내합니다.</p>
       <div class="update-badge-container" style="text-align: center; margin-top: -5px; margin-bottom: 25px; font-size: 13px; color: var(--color-text-muted);">
         <i class="far fa-clock"></i> 심평원 최신 연동일: <span id="lastUpdatedDate" style="font-weight: 600; color: var(--color-secondary);">로딩 중...</span>
       </div>
@@ -141,7 +141,7 @@
       <div class="controls-card" style="margin-top: 30px; border-left: 4px solid var(--color-secondary);">
         <h3 style="font-size: 17px; font-weight: 700; color: var(--color-primary); margin-bottom: 8px;"><i class="fas fa-book-medical" style="color: var(--color-secondary);"></i> 병원 가기 전 꼭 읽어야 할 비급여 절약 가이드</h3>
         <p style="font-size: 13.5px; color: var(--color-text-muted); margin-bottom: 12px; line-height: 1.6;">가다실 9가 가격 아끼는 요령, 대상포진 백신 비교, 도수치료 실비 청구 가이드 등 의료비 낭비를 막는 유용한 팁을 제공합니다.</p>
-        <a href="guides.html" style="display: inline-flex; align-items: center; gap: 6px; font-weight: 600; text-decoration: none; color: var(--color-secondary); font-size: 14.5px;">전체 가이드 게시판 보기 <i class="fas fa-arrow-right"></i></a>
+        <a href="/guides" style="display: inline-flex; align-items: center; gap: 6px; font-weight: 600; text-decoration: none; color: var(--color-secondary); font-size: 14.5px;">전체 가이드 게시판 보기 <i class="fas fa-arrow-right"></i></a>
       </div>
 
       <!-- Results List -->
@@ -167,11 +167,11 @@
           </div>
           <div class="clinic-price-area">
             <span class="price-label">비급여 진료비</span>
-            <span class="price-value">230,000원</span>
+            <span class="price-value">222,500원</span>
           </div>
           <div class="clinic-status-area">
-            <span class="price-badge safe"><i class="fas fa-check-circle"></i> 최저가 안심</span>
-            <button class="share-card-btn" onclick="shareClinic('가톨릭대학교 여의도성모병원', '자궁경부암 예방접종 (가다실 9가)', 230000)"><i class="fas fa-share-alt"></i> 공유하기</button>
+            <span class="price-badge warn"><i class="fas fa-info-circle"></i> 평균 수준</span>
+            <button class="share-card-btn" onclick="shareClinic('가톨릭대학교 여의도성모병원', '자궁경부암 예방접종 (가다실 9가)', 222500)"><i class="fas fa-share-alt"></i> 공유하기</button>
           </div>
         </div>
         <div class="clinic-card">
@@ -197,11 +197,11 @@
           </div>
           <div class="clinic-price-area">
             <span class="price-label">비급여 진료비</span>
-            <span class="price-value">80,000원</span>
+            <span class="price-value">48,000원</span>
           </div>
           <div class="clinic-status-area">
             <span class="price-badge warn"><i class="fas fa-info-circle"></i> 평균 수준</span>
-            <button class="share-card-btn" onclick="shareClinic('서울대학교병원', '도수치료 (1회, 60분)', 80000)"><i class="fas fa-share-alt"></i> 공유하기</button>
+            <button class="share-card-btn" onclick="shareClinic('서울대학교병원', '도수치료 (1회, 60분)', 48000)"><i class="fas fa-share-alt"></i> 공유하기</button>
           </div>
         </div>
       </div>
@@ -215,8 +215,8 @@
             <p>비급여 진료는 건강보험 혜택이 적용되지 않아 환자가 비용 전체를 부담하는 항목입니다. 보건복지부 규정에 따라 의료기관의 장이 장비 도입비, 인건비, 서비스 수준을 반영해 금액을 자율 책정하므로 가다실 9가나 싱그릭스 등 동일 백신도 의료기관별 가격 차이가 심하게 발생할 수 있습니다.</p>
           </div>
           <div class="seo-faq-item">
-            <h4>Q. 가격 안심 등급(최저가 안심, 최고가 주의)은 어떻게 결정되나요?</h4>
-            <p>메디프라이스는 전국 4,800여 개 병원 비급여 비용의 통계를 분석하여, 해당 품목 및 선택 지역의 평균 단가 대비 약 15% 이상 저렴한 의원은 '최저가 안심', 15% 이상 높은 의원은 '최고가 주의' 배지를 부여하여 합리적인 선택을 돕습니다.</p>
+            <h4>Q. 가격 수준 표시(평균 대비 저렴, 평균 대비 높음)은 어떻게 결정되나요?</h4>
+            <p>메디프라이스는 전국 2,600여 개 병원 비급여 비용의 통계를 분석하여, 해당 품목 및 선택 지역의 중간값(중앙값) 대비 약 15% 이상 저렴한 의원은 '평균 대비 저렴', 15% 이상 높은 의원은 '평균 대비 높음' 배지를 부여하여 합리적인 선택을 돕습니다.</p>
           </div>
           <div class="seo-faq-item">
             <h4>Q. 도수치료 및 예방접종도 실비(실손) 보험 청구가 가능한가요?</h4>
@@ -224,7 +224,7 @@
           </div>
           <div class="seo-faq-item">
             <h4>Q. 메디프라이스 정보는 신뢰할 수 있나요?</h4>
-            <p>메디프라이스는 건강보험심사평가원(HIRA)의 공공 데이터를 분석 및 연동하여 실시간에 가깝게 가공하여 가격을 안내합니다. 다만 병원 내 자체 이벤트나 가격 변동이 실시간 반영되지 않을 수 있으므로 방문 전 의료기관에 가격을 최종 재확인하시는 것을 추천합니다.</p>
+            <p>메디프라이스는 건강보험심사평가원(HIRA)의 공공 데이터를 분석 및 연동하여 주 1회 갱신하여 가공하여 가격을 안내합니다. 다만 병원 내 자체 이벤트나 가격 변동이 즉시 반영되지 않을 수 있으므로 방문 전 의료기관에 가격을 최종 재확인하시는 것을 추천합니다.</p>
           </div>
         </div>
       </section>
@@ -240,10 +240,10 @@
           <p>본 서비스는 건강보험심사평가원의 공공 데이터 포털 비급여 진료비용 조회 정보를 기반으로 가공되었습니다.</p>
         </div>
         <div class="footer-links">
-          <a href="about.html">서비스 소개</a>
-          <a href="guides.html">의료비 절약 가이드</a>
-          <a href="terms.html">이용약관 및 면책조항</a>
-          <a href="privacy-policy.html">개인정보처리방침</a>
+          <a href="/about">서비스 소개</a>
+          <a href="/guides">의료비 절약 가이드</a>
+          <a href="/terms">이용약관 및 면책조항</a>
+          <a href="/privacy-policy">개인정보처리방침</a>
         </div>
       </div>
       <div class="footer-bottom">

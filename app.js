@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch('data.json')
     .then(res => res.json())
     .then(data => {
-      clinicData = data;
+      clinicData = dropOutliers(data);
       buildRegionData();
       initRegions();
       render();
@@ -204,6 +204,21 @@ function updateDistrictOptions(city) {
   });
 }
 
+// 항목별 중앙값의 20% 미만은 단위 오류로 보고 제외 (도수치료 2,000원, 스카이조스터 8,314원 등)
+function median(arr) {
+  const s = [...arr].sort((a, b) => a - b);
+  const m = s.length >> 1;
+  return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+}
+
+function dropOutliers(data) {
+  const floor = {};
+  const byItem = {};
+  data.forEach(x => (byItem[x.item] = byItem[x.item] || []).push(x.price));
+  Object.keys(byItem).forEach(k => (floor[k] = median(byItem[k]) * 0.2));
+  return data.filter(x => x.price >= floor[x.item]);
+}
+
 function formatNumber(num) {
   return new Intl.NumberFormat().format(num) + "원";
 }
@@ -245,8 +260,11 @@ function render() {
   // 4. Render DOM
   resultsCount.textContent = `검색 결과: ${filtered.length}건`;
   listContainer.innerHTML = "";
-  
+  moreBtn.hidden = true;
+
+  const spread = document.getElementById("spreadNotice");
   if (filtered.length === 0) {
+    if (spread) spread.textContent = "병원마다 비급여 가격 차이가 큽니다";
     listContainer.innerHTML = `
       <div class="no-results">
         <i class="fas fa-exclamation-triangle"></i>
@@ -256,50 +274,87 @@ function render() {
     return;
   }
 
-  // Calculate local average to determine lowest/highest thresholds
+  // 배지 기준: 조회 조건 내 중앙값 (극단값에 덜 흔들림)
   const prices = filtered.map(x => x.price);
-  const avg = prices.reduce((sum, val) => sum + val, 0) / prices.length;
-  
-  filtered.forEach(clinic => {
-    const card = document.createElement("div");
-    card.className = "clinic-card";
-    
-    // Status Badge Logic (For Clickbait)
-    let badgeClass = "warn";
-    let badgeText = "평균 수준";
-    
-    // Thresholds
-    if (clinic.price <= avg * 0.85) {
-      badgeClass = "safe";
-      badgeText = "최저가 안심";
-    } else if (clinic.price >= avg * 1.15) {
-      badgeClass = "danger";
-      badgeText = "최고가 주의";
-    }
-    
-    card.innerHTML = `
-      <div class="clinic-info">
-        <span class="clinic-name">${clinic.name}</span>
-        <span class="clinic-addr"><i class="fas fa-map-marker-alt"></i> ${clinic.addr}</span>
-        <span class="treatment-name">${clinic.treatment}</span>
-      </div>
-      <div class="clinic-price-area">
-        <span class="price-label">비급여 진료비</span>
-        <span class="price-value">${formatNumber(clinic.price)}</span>
-      </div>
-      <div class="clinic-status-area">
-        <span class="price-badge ${badgeClass}">
-          <i class="fas ${badgeClass === 'safe' ? 'fa-check-circle' : badgeClass === 'danger' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
-          ${badgeText}
-        </span>
-        <button class="share-card-btn" onclick="shareClinic('${clinic.name.replace(/'/g, "\\'")}', '${clinic.treatment.replace(/'/g, "\\'")}', ${clinic.price})">
-          <i class="fas fa-share-alt"></i> 공유하기
-        </button>
-      </div>
-    `;
+  const med = median(prices);
+  if (spread) {
+    const ratio = Math.max(...prices) / Math.min(...prices);
+    spread.textContent = filtered.length > 1
+      ? `현재 조회 조건에서 최저가와 최고가는 ${ratio.toFixed(1)}배 차이`
+      : "조회 결과가 1건입니다";
+  }
 
-    listContainer.appendChild(card);
-  });
+  visible = filtered;
+  shown = 0;
+  showMore(med);
+  moreHandler = () => showMore(med);
+}
+
+const PAGE_SIZE = 50;
+let visible = [];
+let shown = 0;
+let moreHandler = null;
+const moreBtn = document.createElement("button");
+moreBtn.className = "more-btn";
+moreBtn.hidden = true;
+moreBtn.addEventListener("click", () => moreHandler && moreHandler());
+listContainer.after(moreBtn);
+
+function showMore(med) {
+  visible.slice(shown, shown + PAGE_SIZE).forEach(c => listContainer.appendChild(buildCard(c, med)));
+  shown = Math.min(shown + PAGE_SIZE, visible.length);
+  moreBtn.hidden = shown >= visible.length;
+  moreBtn.textContent = `더 보기 (${shown} / ${visible.length})`;
+}
+
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+
+function icon(cls) {
+  const i = document.createElement("i");
+  i.className = cls;
+  return i;
+}
+
+function buildCard(clinic, med) {
+  let badgeClass = "warn";
+  let badgeText = "평균 수준";
+  let badgeIcon = "fa-info-circle";
+  if (clinic.price <= med * 0.85) {
+    badgeClass = "safe";
+    badgeText = "평균 대비 저렴";
+    badgeIcon = "fa-check-circle";
+  } else if (clinic.price >= med * 1.15) {
+    badgeClass = "danger";
+    badgeText = "평균 대비 높음";
+    badgeIcon = "fa-exclamation-circle";
+  }
+
+  const card = el("div", "clinic-card");
+
+  const info = el("div", "clinic-info");
+  info.appendChild(el("span", "clinic-name", clinic.name));
+  const addr = el("span", "clinic-addr");
+  addr.append(icon("fas fa-map-marker-alt"), " " + clinic.addr);
+  info.append(addr, el("span", "treatment-name", clinic.treatment));
+
+  const priceArea = el("div", "clinic-price-area");
+  priceArea.append(el("span", "price-label", "비급여 진료비"), el("span", "price-value", formatNumber(clinic.price)));
+
+  const status = el("div", "clinic-status-area");
+  const badge = el("span", "price-badge " + badgeClass);
+  badge.append(icon("fas " + badgeIcon), " " + badgeText);
+  const share = el("button", "share-card-btn");
+  share.append(icon("fas fa-share-alt"), " 공유하기");
+  share.addEventListener("click", () => shareClinic(clinic.name, clinic.treatment, clinic.price));
+  status.append(badge, share);
+
+  card.append(info, priceArea, status);
+  return card;
 }
 
 function calculateSummary(data) {
