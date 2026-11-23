@@ -22,7 +22,7 @@ async function updateData() {
     console.error("❌ 오류: HIRA_API_KEY 환경변수가 설정되지 않았습니다.");
     console.log("ℹ️ GitHub Actions의 Secrets 설정에 HIRA_API_KEY를 등록했는지 확인해 주세요.");
     console.log("ℹ️ 주간 자동 업데이트 파이프라인 구성을 위해 기본 데이터는 유지합니다.");
-    process.exit(0);
+    process.exit(1);
   }
 
   const updatedData = [];
@@ -181,9 +181,16 @@ async function updateData() {
       console.log(`🎉 업데이트 성공! 데이터가 변경되어 총 ${updatedData.length}개의 최신 비급여 병원 데이터와 last-updated.json이 업데이트되었습니다.`);
     } else {
       console.log("ℹ️ HIRA API 데이터가 이전 데이터와 동일합니다. 파일 쓰기를 건너뜁니다.");
+      // 데이터 변경이 없는 주에도 커밋이 발생하도록 하트비트 파일을 남깁니다.
+      // (60일간 저장소 활동이 없으면 GitHub이 스케줄 워크플로를 자동 비활성화하는 것을 방지)
+      const hbNow = new Date();
+      const hbKst = new Date(hbNow.getTime() + 9 * 60 * 60 * 1000);
+      fs.writeFileSync(path.join(__dirname, '.github', 'last-successful-run.txt'), `Last successful HIRA fetch (no data change): ${hbKst.toISOString().replace('T', ' ').slice(0, 16)} KST\n`, 'utf-8');
+      console.log("ℹ️ 하트비트 파일(.github/last-successful-run.txt)을 업데이트했습니다.");
     }
   } else {
     console.error("❌ 오류: 업데이트할 새로운 데이터가 없어 작업을 중단합니다.");
+    process.exit(1);
   }
 }
 
