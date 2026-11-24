@@ -30,7 +30,8 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add data.json last-updated.json .github/last-successful-run.txt
+        git add data.json last-updated.json
+        git add .github/last-successful-run.txt 2>/dev/null || true  # heartbeat file only exists when data was unchanged
         # Only commit and push if a staged file actually changed
         if git diff --quiet && git diff --staged --quiet; then
           echo "No changes in HIRA data. Skipping push."
