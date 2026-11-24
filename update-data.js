@@ -27,6 +27,7 @@ async function updateData() {
 
   const updatedData = [];
   let globalId = 1;
+  let lastApiHeader = null;
 
   for (const target of TARGET_ITEMS) {
     console.log(`📡 HIRA API 호출 중: [${target.displayName}] 코드 = ${target.brdId}`);
@@ -49,6 +50,8 @@ async function updateData() {
         let response = await fetch(`${API_URL}?${params.toString()}`);
         if (response.ok) {
           const resJson = await response.json();
+            if (resJson.response?.header) lastApiHeader = resJson.response.header;
+          if (resJson.response?.header) lastApiHeader = resJson.response.header;
           const items = resJson.response?.body?.items?.item;
           if (items) {
             const itemList = Array.isArray(items) ? items : [items];
@@ -113,6 +116,10 @@ async function updateData() {
 
     if (allItems.length === 0) {
       console.log(`⚠️ 주의: [${target.displayName}]에 해당하는 API 데이터가 없습니다.`);
+      // 진단: API가 준 헤더 코드/메시지를 남긴다 (키 오류/코드 변경/데이터 없음 구분)
+      if (lastApiHeader) {
+        console.log(`   → API 응답 헤더: resultCode=${lastApiHeader.resultCode}, resultMsg=${lastApiHeader.resultMsg}`);
+      }
       continue;
     }
 
@@ -154,6 +161,20 @@ async function updateData() {
   if (updatedData.length > 0) {
     const outputPath = path.join(__dirname, 'data.json');
     let hasChanged = true;
+
+    // 안전장치: 기존 데이터 대비 50% 미만으로 급감하면 덮어쓰지 않고 실패 처리
+    // (API 파라미터/코드 변경으로 인한 데이터 유실 방지)
+    if (fs.existsSync(outputPath)) {
+      try {
+        const existingCount = JSON.parse(fs.readFileSync(outputPath, 'utf-8')).length;
+        if (existingCount > 0 && updatedData.length < existingCount * 0.5) {
+          console.error(`❌ 오류: 가져온 데이터(${updatedData.length}개)가 기존(${existingCount}개)의 50% 미만입니다. 덮어쓰지 않고 중단합니다. HIRA API 코드/파라미터 변경 여부를 확인해 주세요.`);
+          process.exit(1);
+        }
+      } catch (e) {
+        // 기존 파일 파싱 실패 시 가드 생략
+      }
+    }
     
     if (fs.existsSync(outputPath)) {
       try {
