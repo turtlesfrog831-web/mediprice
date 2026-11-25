@@ -1,0 +1,24 @@
+name: Apply mediprice content pack
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unpack pack, apply files, clean up
+        run: |
+          set -eux
+          mkdir -p /tmp/pack
+          tar xzf 9-medpack.tgz -C /tmp/pack
+          cp /tmp/pack/guides/*.html guides/
+          cp /tmp/pack/guides.html /tmp/pack/about.html /tmp/pack/privacy-policy.html /tmp/pack/terms.html /tmp/pack/robots.txt /tmp/pack/sitemap.xml .
+          rm -f guides/1-*.html guides/2-*.html guides/3-*.html guides/4-*.html guides/5-*.html guides/6-*.html guides/8-*.html 9-medpack.tgz
+          rm -f .github/workflows/apply-pack.yml
+          git config user.email "actions@github.com"
+          git config user.name "github-actions"
+          git add -A
+          git commit -m "Apply content pack: 7 renamed new guides, SEO description fixes, info-page descriptions, sitemap lastmod, robots BOM fix"
+          git push
