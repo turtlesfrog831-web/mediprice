@@ -1,0 +1,26 @@
+name: Build hospital coordinates
+on:
+  workflow_dispatch:
+  schedule:
+    # Mondays 01:00 KST (Sunday 16:00 UTC), after the weekly price update
+    - cron: '0 16 * * 0'
+permissions:
+  contents: write
+jobs:
+  coords:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Generate coords.json
+        env:
+          HIRA_API_KEY: ${{ secrets.HIRA_API_KEY }}
+        run: node gen_coords.js
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add coords.json
+          git diff --staged --quiet || (git commit -m "Update hospital coordinates for map" && git pull --rebase && git push)
