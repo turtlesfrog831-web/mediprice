@@ -21,14 +21,15 @@ async function lookup(r) {
   for (let t = 0; t < 3; t++) {
     try {
       calls++;
-      res = await fetch(`${URL_}?${p}`);
+      res = await fetch(`${URL_}?${p}`, { signal: AbortSignal.timeout(20000) });
+      if (calls <= 12) console.log(`[dbg] ${r.name} -> HTTP ${res.status}`);
       if (res.ok) break;
-    } catch (e) {}
+    } catch (e) { if (calls <= 12) console.log(`[dbg] ${r.name} err ${e.message}`); }
     await new Promise(s => setTimeout(s, 1000 * (t + 1)));
   }
   if (!res || !res.ok) { miss++; return; }
   let j;
-  try { j = await res.json(); } catch (e) { apiErr = apiErr || 'JSON 아님(키/서비스 신청 확인 필요)'; return; }
+  let txt = ''; try { txt = await res.text(); j = JSON.parse(txt); } catch (e) { if (calls <= 12) console.log('[dbg] body: ' + txt.slice(0, 300)); apiErr = apiErr || 'JSON 아님(키/서비스 신청 확인 필요)'; return; }
   const h = j.response && j.response.header;
   if (h && h.resultCode !== '00') { apiErr = `${h.resultCode} ${h.resultMsg}`; return; }
   let items = j.response && j.response.body && j.response.body.items && j.response.body.items.item;
@@ -50,7 +51,8 @@ async function lookup(r) {
 (async () => {
   const list = [...targets.values()];
   let i = 0;
-  const worker = async () => { while (i < list.length && !apiErr) { await lookup(list[i++]); if (i % 200 === 0) console.log(`${i}/${list.length}`); } };
+  const t0 = Date.now();
+  const worker = async () => { while (i < list.length && !apiErr && Date.now() - t0 < 50 * 60 * 1000) { await lookup(list[i++]); if (i % 25 === 0) console.log(`${i}/${list.length}`); } };
   await Promise.all(Array.from({ length: 4 }, worker));
   console.log(`성공 ${ok}, 미매칭 ${miss}, 호출 ${calls}`);
   if (apiErr) { console.error('API 오류: ' + apiErr + ' (data.go.kr에서 "건강보험심사평가원_병원정보서비스" 활용신청이 필요할 수 있습니다)'); if (!ok && !Object.keys(coords).length) process.exit(1); }
