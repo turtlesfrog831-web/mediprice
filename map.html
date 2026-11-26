@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>병원 위치 지도 - 메디프라이스 비급여 가격 지도 보기</title>
+  <meta name="description" content="가다실9가, 대상포진 예방접종, 도수치료 등 비급여 진료 병원의 위치와 가격을 지도에서 확인하세요.">
+  <link rel="canonical" href="https://mediprice.pages.dev/map">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .map-wrap { margin: 16px auto 32px; }
+    .map-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; align-items: center; }
+    .map-controls select { padding: 10px 12px; border-radius: 10px; border: 1px solid #cbd5e1; font-size: 15px; background: #fff; min-width: 140px; flex: 1 1 140px; }
+    #map { width: 100%; height: 70vh; min-height: 420px; border-radius: 16px; border: 1px solid #e2e8f0; z-index: 1; }
+    .map-status { font-size: 14px; color: #475569; margin: 8px 0; }
+    .pop-name { font-weight: 700; font-size: 15px; margin-bottom: 2px; }
+    .pop-addr { color: #475569; font-size: 12px; margin-bottom: 6px; }
+    .pop-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 2px 0; }
+    .pop-row b { color: #0f766e; white-space: nowrap; }
+    .map-back { display: inline-block; margin: 12px 0; color: #0f766e; font-weight: 600; text-decoration: none; }
+    @media (max-width: 600px) { #map { height: 65vh; } }
+  </style>
+</head>
+<body>
+  <div class="container map-wrap">
+    <a class="map-back" href="/"><i class="fas fa-arrow-left"></i> 메디프라이스 가격 조회로 돌아가기</a>
+    <h1 style="font-size:1.5rem;margin:4px 0 12px;">🗺️ 병원 위치 지도</h1>
+    <div class="map-controls">
+      <select id="mItem" aria-label="진료 항목"></select>
+      <select id="mCity" aria-label="시/도"><option value="">전체 지역</option></select>
+      <select id="mDistrict" aria-label="시/군/구"><option value="">전체 시/군/구</option></select>
+    </div>
+    <div class="map-status" id="mStatus">지도를 불러오는 중...</div>
+    <div id="map"></div>
+    <p class="map-status">마커를 누르면 병원명, 주소, 항목별 비급여 가격이 표시됩니다. 위치는 건강보험심사평가원 병원정보 기준이며, 가격은 참고용이므로 방문 전 병원에 재확인하세요. 지도 &copy; OpenStreetMap contributors.</p>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script>
+  (function () {
+    var map = L.map('map').setView([36.4, 127.8], 7);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+    var cluster = L.markerClusterGroup({ maxClusterRadius: 50 });
+    map.addLayer(cluster);
+    var $ = function (id) { return document.getElementById(id); };
+    var rows = [], coords = {};
+    var ITEMS = { gardasil: '가다실 9가', shingles: '싱그릭스', skyzoster: '스카이조스터', manual: '도수치료' };
+    var keyOf = function (r) { return r.name + '|' + r.city + '|' + r.district; };
+    var fmt = function (n) { return Number(n).toLocaleString('ko-KR') + '원'; };
+    var esc = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; };
+
+    function render() {
+      var item = $('mItem').value, city = $('mCity').value, dist = $('mDistrict').value;
+      cluster.clearLayers();
+      var by = {};
+      rows.forEach(function (r) {
+        if (item && r.item !== item) return;
+        if (city && r.city !== city) return;
+        if (dist && r.district !== dist) return;
+        var k = keyOf(r);
+        if (!coords[k]) return;
+        (by[k] = by[k] || []).push(r);
+      });
+      var markers = [], pts = [];
+      Object.keys(by).forEach(function (k) {
+        var c = coords[k], list = by[k], r0 = list[0];
+        var html = '<div class="pop-name">' + esc(r0.name) + '</div><div class="pop-addr">' + esc(c[2] || r0.addr) + '</div>';
+        list.sort(function (a, b) { return a.price - b.price; }).forEach(function (r) {
+          html += '<div class="pop-row"><span>' + esc(r.treatment) + '</span><b>' + fmt(r.price) + '</b></div>';
+        });
+        markers.push(L.marker([c[0], c[1]]).bindPopup(html, { maxWidth: 280 }));
+        pts.push([c[0], c[1]]);
+      });
+      cluster.addLayers(markers);
+      var total = new Set(rows.filter(function (r) { return (!item || r.item === item) && (!city || r.city === city) && (!dist || r.district === dist); }).map(keyOf)).size;
+      $('mStatus').textContent = '지도에 표시된 병원 ' + markers.length.toLocaleString() + '곳' + (total > markers.length ? ' (위치 확인 중인 병원 ' + (total - markers.length).toLocaleString() + '곳 제외)' : '');
+      if (pts.length && (city || dist)) map.fitBounds(pts, { padding: [30, 30], maxZoom: 15 });
+      else if (!city && !dist) map.setView([36.4, 127.8], 7);
+    }
+    function fillDistricts() {
+      var city = $('mCity').value, s = $('mDistrict');
+      s.innerHTML = '<option value="">전체 시/군/구</option>';
+      var set = {};
+      rows.forEach(function (r) { if (!city || r.city === city) set[r.district] = 1; });
+      if (!city) return;
+      Object.keys(set).sort().forEach(function (d) { var o = document.createElement('option'); o.value = d; o.textContent = d; s.appendChild(o); });
+    }
+    Promise.all([
+      fetch('data.json').then(function (r) { return r.json(); }),
+      fetch('coords.json').then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })
+    ]).then(function (res) {
+      rows = res[0]; coords = res[1] || {};
+      var s = $('mItem'); s.innerHTML = '<option value="">전체 항목</option>';
+      Object.keys(ITEMS).forEach(function (k) { var o = document.createElement('option'); o.value = k; o.textContent = ITEMS[k]; s.appendChild(o); });
+      var cities = {}; rows.forEach(function (r) { cities[r.city] = 1; });
+      Object.keys(cities).sort().forEach(function (c) { var o = document.createElement('option'); o.value = c; o.textContent = c; $('mCity').appendChild(o); });
+      $('mItem').onchange = render;
+      $('mCity').onchange = function () { fillDistricts(); render(); };
+      $('mDistrict').onchange = render;
+      if (!Object.keys(coords).length) $('mStatus').textContent = '병원 위치 데이터를 준비 중입니다. 잠시 후 다시 확인해 주세요.';
+      else render();
+    }).catch(function () { $('mStatus').textContent = '데이터를 불러오지 못했습니다.'; });
+  })();
+  </script>
+</body>
+</html>
